@@ -12,11 +12,6 @@ public class Affichage {
         public Grid1() {
             int n = 0;
             //initialize grid
-            for(int innerLoopValue = 0; innerLoopValue<x;innerLoopValue++)
-            {
-                grid[0][innerLoopValue]= "| "+ n +"|";
-                n++;
-            }
             for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
             {
                 for(int innerLoopValue = 0; innerLoopValue<x;innerLoopValue++)
@@ -27,6 +22,7 @@ public class Affichage {
         }
         public void PrintGrid() {
             char ch = 'a';
+            PrintHeader();
             for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
             {
                 System.out.println();
@@ -38,6 +34,23 @@ public class Affichage {
                 }
                 System.out.print("|");
             }
+        }
+
+        private void PrintHeader(){
+            int n = 0;
+            System.out.print(" ");
+            for(int innerLoopValue = 0; innerLoopValue<x;innerLoopValue++)
+            {
+                if (n < 10)
+                {
+                    System.out.print("| "+ n);
+                }
+                else{
+                    System.out.print("|"+ n);
+                }
+                n++;
+            }
+            System.out.print("|");
         }
     }
 }
