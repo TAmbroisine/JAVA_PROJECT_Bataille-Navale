@@ -7,7 +7,7 @@ public class Croiseur extends Navire
     }
 
     @Override
-    public void Tir()
+    public void Tir(int x = x, int y = y)
     {
 
     }
