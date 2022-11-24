@@ -3,6 +3,8 @@
 * https://stackoverflow.com/a/47400150
 * */
 
+import java.util.Objects;
+
 public class Affichage {
 
     public static class Grid1 {
@@ -16,16 +18,18 @@ public class Affichage {
             //initialize grid
             for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
             {
+                // grille USER
                 for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
                 {
                     grid[innerLoopValue][outerLoopValue]= "|__";
                 }
+                // Séparation
                 for(int innerSepareurValue = x/2; innerSepareurValue < separateur; innerSepareurValue++)
                 {
 
                     grid[innerSepareurValue][outerLoopValue]= "|   ";
                 }
-
+                // grille CPU
                 for(int innerLoopValue = separateur; innerLoopValue<x+1;innerLoopValue++)
                 {
                     grid[innerLoopValue][outerLoopValue]= "|__";
@@ -33,17 +37,17 @@ public class Affichage {
 
             }
         }
-        public Grid1(String[][] Navire) {
+        public void AddBoat(String[][] Navire) {
             int n = 0;
             //initialize grid
-            for(int outerLoopValue = 0; outerLoopValue<x;outerLoopValue++)
+            for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
             {
-                for(int innerLoopValue = 0; innerLoopValue<y;innerLoopValue++)
+                // grille USER
+                for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
                 {
-                    if (Navire[outerLoopValue][innerLoopValue] == "|##"){
+                    if (Objects.equals(Navire[outerLoopValue][innerLoopValue], "|##")){
                         grid[outerLoopValue][innerLoopValue]= "|##";
-                    }
-                    else{
+                    }else if (!Objects.equals(grid[outerLoopValue][innerLoopValue], "|##")){
                         grid[outerLoopValue][innerLoopValue]= "|__";
                     }
                 }
@@ -51,6 +55,7 @@ public class Affichage {
         }
         public void PrintGrid() {
             char ch = 'a';
+            Nom_Grille();
             PrintHeader();
             for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
             {
@@ -79,7 +84,7 @@ public class Affichage {
                     System.out.print("|"+ n);
                 }
                 n++;
-                if(n>15 && reset == true){
+                if(n>15 && reset){
 
                     System.out.print("|   ");
                     n=0;
@@ -94,7 +99,7 @@ public class Affichage {
          System.out.print("Grille du joueur");
          System.out.print("                   ");
          System.out.print("       ");
-         System.out.println("Grille des dégats l'ordinateur");
+         System.out.println("Grille des dégats sur l'ordinateur");
      }
     }
 }

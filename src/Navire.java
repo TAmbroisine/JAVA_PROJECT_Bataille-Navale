@@ -1,7 +1,6 @@
-abstract class Navire
-{
+abstract class Navire implements I_Navire {
 
-    protected Affichage.Grid1 Plateau = new Affichage.Grid1();
+    //protected Affichage.Grid1 Plateau = new Affichage.Grid1();
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
     public void Deplacement (){
@@ -9,7 +8,7 @@ abstract class Navire
     }
     abstract public void Tir (int x, int y);
 
-    protected void postionnement(String orientation, int y, int x, int taille, String[][] bateau) {
+    public void postionnement(String orientation, int y, int x, int taille, String[][] bateau) {
         if (orientation == "vertical") {
             for (int i = y; i < (y + taille); i++) {
                 bateau[x][i] = "|##";
@@ -21,7 +20,7 @@ abstract class Navire
                 bateau[i][y] = "|##";
             }
         }
-        this.Plateau = new Affichage.Grid1(bateau);
+        Plateau.AddBoat(bateau);
     }
 
 }

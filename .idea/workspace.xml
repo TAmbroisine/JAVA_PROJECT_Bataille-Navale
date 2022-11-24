@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="">
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="position bateau">
+      <change afterPath="$PROJECT_DIR$/src/I_Navire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cuirasse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroyer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sous_Marin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="592b9468daeedb7222d211e92753d0b8d9089960" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -26,7 +44,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -37,8 +56,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665490865487</updated>
+      <workItem from="1669294356984" duration="569000" />
+      <workItem from="1669297277229" duration="2892000" />
     </task>
+    <task id="LOCAL-00001" summary="position bateau">
+      <created>1669294905928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669294905928</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -51,11 +83,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="((String[][])((Grid1)this).grid)[17]" custom="java.lang.String[][],Affichage.Grid1" />
-      </configuration>
-    </watches-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="position bateau" />
+    <option name="LAST_COMMIT_MESSAGE" value="position bateau" />
   </component>
 </project>

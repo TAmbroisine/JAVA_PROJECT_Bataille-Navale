@@ -11,14 +11,14 @@ public class Sous_Marin extends Navire
         orientation = " ";
     }
 
-    private Sous_Marin(int x, int y, String orientation){
+    public Sous_Marin(int x, int y, String orientation){
         this.x = x;
         this.y = y;
         this.orientation = orientation;
         taille = 1;
-        bateau = new String[Plateau.x][Plateau.y];
+        bateau = new String[Plateau.x/2][Plateau.y];
         super.postionnement(this.orientation, this.y, this.x,taille,bateau);
-        Plateau.PrintGrid();
+        super.Plateau.PrintGrid();
     }
     @Override
     public void Tir(int x, int y) {
