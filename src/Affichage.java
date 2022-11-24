@@ -33,6 +33,22 @@ public class Affichage {
 
             }
         }
+        public Grid1(String[][] Navire) {
+            int n = 0;
+            //initialize grid
+            for(int outerLoopValue = 0; outerLoopValue<x;outerLoopValue++)
+            {
+                for(int innerLoopValue = 0; innerLoopValue<y;innerLoopValue++)
+                {
+                    if (Navire[outerLoopValue][innerLoopValue] == "|##"){
+                        grid[outerLoopValue][innerLoopValue]= "|##";
+                    }
+                    else{
+                        grid[outerLoopValue][innerLoopValue]= "|__";
+                    }
+                }
+            }
+        }
         public void PrintGrid() {
             char ch = 'a';
             PrintHeader();
