@@ -8,19 +8,38 @@ abstract class Navire implements I_Navire {
     }
     abstract public void Tir (int x, int y);
 
-    public void postionnement(String orientation, int y, int x, int taille, String[][] bateau) {
+    public void positionnement(String orientation, int y, int x, int taille, String[][] bateau) {
+        if (CheckSpace(orientation,y,x,taille)) {
+            if (orientation == "vertical") {
+                for (int i = y; i < (y + taille); i++) {
+                    bateau[x][i] = "|##";
+                }
+            }
+            if (orientation == "horizontal") {
+                for (int i = x; i < (x + taille); i++) {
+                    bateau[i][y] = "|##";
+                }
+            }
+            Plateau.AddBoat(bateau);
+        }
+    }
+
+    private boolean CheckSpace(String orientation, int y, int x, int taille){
         if (orientation == "vertical") {
             for (int i = y; i < (y + taille); i++) {
-                bateau[x][i] = "|##";
+                if (Plateau.grid[x][i] == "|##") {
+                    return false;
+                }
             }
-
         }
-        if (orientation == "horizontal") {
+        else if (orientation == "horizontal") {
             for (int i = x; i < (x + taille); i++) {
-                bateau[i][y] = "|##";
+                if (Plateau.grid[i][y] == "|##"){
+                    return false;
+                }
             }
         }
-        Plateau.AddBoat(bateau);
+        return true;
     }
 
 }

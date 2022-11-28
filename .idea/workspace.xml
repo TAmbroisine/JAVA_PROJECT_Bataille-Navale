@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="position bateau">
-      <change afterPath="$PROJECT_DIR$/src/I_Navire.java" afterDir="false" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="All boats on one grid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cuirasse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/I_Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/I_Navire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sous_Marin.java" afterDir="false" />
@@ -57,7 +56,8 @@
       <option name="presentableId" value="Default" />
       <updated>1665490865487</updated>
       <workItem from="1669294356984" duration="569000" />
-      <workItem from="1669297277229" duration="2892000" />
+      <workItem from="1669297277229" duration="3792000" />
+      <workItem from="1669622132324" duration="1299000" />
     </task>
     <task id="LOCAL-00001" summary="position bateau">
       <created>1669294905928</created>
@@ -66,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669294905928</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="All boats on one grid">
+      <created>1669300455588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669300455588</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,6 +92,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="position bateau" />
-    <option name="LAST_COMMIT_MESSAGE" value="position bateau" />
+    <MESSAGE value="All boats on one grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="All boats on one grid" />
   </component>
 </project>
