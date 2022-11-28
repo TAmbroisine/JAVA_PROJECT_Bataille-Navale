@@ -7,11 +7,13 @@ import java.util.Objects;
 
 public class Affichage {
 
+    Affichage(){}
+
     public static class Grid1 {
         int x = 16*2;
         int y = 16;
 
-        int separateur = (x/2)+ 1;
+        int separateur = x/2 + 1;
         public String [][] grid = new String[x+1][y];
         public Grid1() {
             int n = 0;
@@ -45,9 +47,16 @@ public class Affichage {
                 // grille USER
                 for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
                 {
+                    /* if navire[x][y]== |## -> grid[x][y] = |##
+                        Implémente le bateau dans la grille
+                    */
                     if (Objects.equals(Navire[outerLoopValue][innerLoopValue], "|##")){
                         grid[outerLoopValue][innerLoopValue]= "|##";
-                    }else if (!Objects.equals(grid[outerLoopValue][innerLoopValue], "|##")){
+                    }
+                    /* if grid[x][y] != |## -> grid[x][y] = |__
+                        Empêche l'effacement d'un bateau déjà présent
+                     */
+                    else if (!Objects.equals(grid[outerLoopValue][innerLoopValue], "|##")){
                         grid[outerLoopValue][innerLoopValue]= "|__";
                     }
                 }
@@ -101,5 +110,6 @@ public class Affichage {
          System.out.print("       ");
          System.out.println("Grille des dégats sur l'ordinateur");
      }
+
     }
 }

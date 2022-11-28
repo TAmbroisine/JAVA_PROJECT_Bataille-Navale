@@ -20,7 +20,7 @@ public class Cuirasse extends Navire
         taille = 7;
         bateau = new String[Plateau.x/2][Plateau.y];
         super.positionnement(this.orientation, this.y, this.x,taille,bateau);
-        super.Plateau.PrintGrid();
+        //super.Plateau.PrintGrid();
 
     }
 

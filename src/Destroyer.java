@@ -18,7 +18,7 @@ public class Destroyer extends Navire
         taille = 3;
         bateau = new String[Plateau.x/2][Plateau.y];
         super.positionnement(this.orientation, this.y, this.x,taille,bateau);
-        super.Plateau.PrintGrid();
+        //super.Plateau.PrintGrid();
     }
     @Override
     public void Tir(int x, int y)
