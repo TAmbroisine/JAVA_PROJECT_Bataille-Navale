@@ -20,9 +20,10 @@ public class Destroyer extends Navire
         super.positionnement(this.orientation, this.y, this.x,taille,bateau);
         //super.Plateau.PrintGrid();
     }
+    /*
     @Override
     public void Tir(int x, int y)
     {
 
-    }
+    }*/
 }

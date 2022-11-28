@@ -23,11 +23,11 @@ public class Cuirasse extends Navire
         //super.Plateau.PrintGrid();
 
     }
-
+    /*
     @Override
     public void Tir(int x, int y)
     {
 
-    }
+    }*/
 
 }

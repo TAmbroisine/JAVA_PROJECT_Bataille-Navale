@@ -19,7 +19,7 @@ public class Navire implements I_Navire {
             }
         }
     }
-    abstract public void Tir (int x, int y);
+    //abstract public void Tir (int x, int y);
 
     public boolean positionnement(String orientation, int y, int x, int taille, String[][] bateau) {
         if (CheckSpace(orientation,y,x,taille)) {

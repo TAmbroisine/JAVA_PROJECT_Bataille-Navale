@@ -18,10 +18,10 @@ public class Sous_Marin extends Navire
         taille = 1;
         bateau = new String[Plateau.x/2][Plateau.y];
         super.positionnement(this.orientation, this.y, this.x,taille,bateau);
-        super.Plateau.PrintGrid();
-    }
+        //super.Plateau.PrintGrid();
+    }/*
     @Override
     public void Tir(int x, int y) {
 
-    }
+    }*/
 }
