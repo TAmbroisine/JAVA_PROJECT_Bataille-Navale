@@ -10,7 +10,7 @@ public class Affichage {
     Affichage(){}
 
     public static class Grid1 {
-        int x = 27*2;
+        int x = 16*2;
         int y = x/2;
 
         int separateur = x/2 + 1;
