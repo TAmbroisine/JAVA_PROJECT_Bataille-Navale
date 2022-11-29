@@ -2,20 +2,17 @@ import java.util.Scanner;
 // Création du menu
 public class Menu extends Affichage
 {
-
     static Scanner userReader;
 
     Menu()
     {
         userReader = new Scanner(System.in);
     }
-
     public void print()
     {
         int choix1, choix2;
 
         do {
-
             PrintMenu();
             switch (choix1 = userReader.nextInt()) {
                 case 1:
@@ -31,21 +28,16 @@ public class Menu extends Affichage
                     break;
                 case 3:
                     //Pour afficher les aides
-
                     do {
-                        System.out.println("----------------------------------------------------------------");
-                        System.out.println("                        MENU AIDE");
-                        System.out.println("----------------------------------------------------------------");
                         // [1] : Affiche les règle
                         // [2] : Affiche les touches
-                        System.out.println("[1] : Regles");
-                        System.out.println("[2] : Commmandes");
-                        System.out.println("[9] : Quitter");
+                        System.out.println("Pour afficher les règles : tapez 1");
+                        System.out.println("Pour afficher les touches : tapez 2");
+                        System.out.println("Pour sortir du menu : tapez 9");
                         switch (choix2 = userReader.nextInt()) {
                             case 1:
                                 //règle du jeu
                                 PrintRegle();
-                                userReader.next();
                                 break;
                             case 2:
                                 //touches du jeu
@@ -74,15 +66,13 @@ public class Menu extends Affichage
     }
     private static void PrintRegle()
     {
-        System.out.println("----------------------------------------------------------------");
-        System.out.println("                       REGLES DU JEU");
-        System.out.println("----------------------------------------------------------------");
-        System.out.println("En début de jeu les navires sont positionnés aléatoirement sur la grille, Votre but est de détruire tous les navires adverses ! \n" +
+        System.out.println("Bienvenue dans les règles : \n"+
+                "\n" +
+                "En début de jeu les navires sont positionnés aléatoirement sur la grille, Votre but est de détruire tous les navires adverses ! \n" +
                 "Petites particularitées : \n"+
                 "LES BATEAUX NAVIGUE PENDANT LA PARTIE \n" +
                 "\n"+
-                "POUR TIRER : \n"+
-                "\n"+
+                "Pour TIRER : \n"+
                 "LE PREMIER TIR DUN DESTROYER DEVOILE UN CARRE DE 4x4 A PARTIR DU COIN HAUT ET GAUCHE \n "+
                 "SEUL LE SOUS MARIN PEUt TOUCHER ET COULER LE SOUS MARIN ADVERSE \n " +
                 "POUR COULER UN NAVIRE, IL FAUT AVOIR TOUCHER TOUTES LES CASES QU’IL OCCUPE \n" +
@@ -93,14 +83,12 @@ public class Menu extends Affichage
 
     private static void PrintMenu()
     {
-        System.out.println("----------------------------------------------------------------");
-        System.out.println("                       MENU PRINCIPAL");
-        System.out.println("----------------------------------------------------------------");
+        System.out.println("Bienvenue dans la battaille navale");
         System.out.println("");
-        System.out.println("[1] : Nouvelle partie");
-        System.out.println("[2] : Charger une partie");
-        System.out.println("[3] : Aides");
-        System.out.println("[9] : Quitter");
+        System.out.println("Pour jouer une nouvelle partie : tapez 1");
+        System.out.println("Pour charger une partie : tapez 2");
+        System.out.println("Pour afficher les aides : tapez 3");
+        System.out.println("Pour quitter le jeu : tapez 9 ");
     }
 
 }

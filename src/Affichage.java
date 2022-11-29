@@ -10,8 +10,8 @@ public class Affichage {
     Affichage(){}
 
     public static class Grid1 {
-        int x = 16*2;
-        int y = x/2;
+        public int x = 16*2;
+        public int y = x/2;
 
         int separateur = x/2 + 1;
         public String [][] grid = new String[x+1][y];

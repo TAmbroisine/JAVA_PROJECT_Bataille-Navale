@@ -6,8 +6,9 @@ public class Main {
 
         Menu menu = new Menu();
         menu.print();
-        Navire navire = new Navire();
-        navire.SpawnBoat();
-        
+         //Navires.Navire navire = new Navires.Navire();
+         //navire.SpawnBoat(true);
+
+
     }
 }

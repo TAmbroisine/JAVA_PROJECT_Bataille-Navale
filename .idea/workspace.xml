@@ -1,9 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="suite déplacements">
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="delete print gride for croiseur">
+      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Navires/Croiseur.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Navires/I_Navire.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/I_Navire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
+    </list>
+    <list id="3934c4ae-c023-4d79-afa3-93ca90e77c6e" name="Changes by bavan" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -24,6 +42,30 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Affichage.java">
+      <ranges>
+        <range start1="12" end1="14" start2="12" end2="14" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="17" end1="17" start2="17" end2="18" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+        <range start1="38" end1="38" start2="39" end2="44" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+        <range start1="64" end1="64" start2="70" end2="75" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+        <range start1="80" end1="80" start2="91" end2="108" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Menu.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="2" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="22" end1="23" start2="24" end2="26" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+        <range start1="85" end1="85" start2="88" end2="89" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Main.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
+        <range start1="7" end1="10" start2="8" end2="12" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -41,6 +83,20 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Projet Bataille Navale" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -52,6 +108,7 @@
       <workItem from="1669294356984" duration="569000" />
       <workItem from="1669297277229" duration="3792000" />
       <workItem from="1669622132324" duration="1299000" />
+      <workItem from="1669714916953" duration="7623000" />
     </task>
     <task id="LOCAL-00001" summary="position bateau">
       <created>1669294905928</created>
@@ -74,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669709470281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="delete print gride for croiseur">
+      <created>1669713704934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669713704934</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -95,6 +159,7 @@
     <MESSAGE value="position bateau" />
     <MESSAGE value="All boats on one grid" />
     <MESSAGE value="suite déplacements" />
-    <option name="LAST_COMMIT_MESSAGE" value="suite déplacements" />
+    <MESSAGE value="delete print gride for croiseur" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete print gride for croiseur" />
   </component>
 </project>
