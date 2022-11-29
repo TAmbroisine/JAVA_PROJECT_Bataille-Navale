@@ -3,10 +3,12 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException, InterruptedException
     {
+
         Menu menu = new Menu();
         menu.print();
-        Navire navire = new Navire();
-        navire.SpawnBoat();
-        
+         //Navires.Navire navire = new Navires.Navire();
+         //navire.SpawnBoat(true);
+
+
     }
 }
