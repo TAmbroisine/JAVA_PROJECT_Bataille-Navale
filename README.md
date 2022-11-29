@@ -29,9 +29,9 @@
 
 | Etape  | Progrès |
 |--------|---------|
-| 1      | A faire |
-| 2      | A faire |
+| 1      | Fait    |
+| 2      | En cours|
 | 3      | A faire |
 | 4      | A faire |
 | ------ | ------  |
-| Fait   | 0%      |
+| Fait   | 30 %    |
