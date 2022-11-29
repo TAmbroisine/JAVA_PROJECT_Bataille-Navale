@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="All boats on one grid">
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="suite déplacements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669300455588</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="suite déplacements">
+      <created>1669709470281</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669709470281</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="position bateau" />
     <MESSAGE value="All boats on one grid" />
-    <option name="LAST_COMMIT_MESSAGE" value="All boats on one grid" />
+    <MESSAGE value="suite déplacements" />
+    <option name="LAST_COMMIT_MESSAGE" value="suite déplacements" />
   </component>
 </project>

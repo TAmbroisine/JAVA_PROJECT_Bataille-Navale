@@ -20,7 +20,6 @@ public class Croiseur extends Navire
         taille = 5;
         bateau = new String[Plateau.x/2][Plateau.y];
         super.positionnement(this.orientation, this.y, this.x,taille,bateau);
-        super.Plateau.PrintGrid();
     }
     /*
     @Override
