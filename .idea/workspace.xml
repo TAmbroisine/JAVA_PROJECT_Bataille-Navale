@@ -1,109 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="">
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="All boats on one grid">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/I_Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/I_Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navire.java" afterDir="false" />
-    </list>
-    <list id="abb35a72-82c5-4a75-85e5-c859f792088a" name="Changes by bavan" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Croiseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sous_Marin.java" afterDir="false" />
-    </list>
-    <list id="2b07bce4-0b4f-486e-b004-77ff1770c1f2" name="Changes by theworm" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichage.java" afterDir="false" />
-    </list>
-    <list id="e4ff4686-744f-42b3-a608-f05c433202c9" name="Changes by yanni" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="592b9468daeedb7222d211e92753d0b8d9089960" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Affichage.java">
-      <ranges>
-        <range start1="8" end1="8" start2="8" end2="10" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="10" end1="12" start2="12" end2="14" changelist="2b07bce4-0b4f-486e-b004-77ff1770c1f2" />
-        <range start1="13" end1="14" start2="15" end2="16" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="47" end1="47" start2="49" end2="52" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="49" end1="50" start2="54" end2="59" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="86" end1="87" start2="95" end2="96" changelist="2b07bce4-0b4f-486e-b004-77ff1770c1f2" />
-        <range start1="97" end1="98" start2="106" end2="109" changelist="2b07bce4-0b4f-486e-b004-77ff1770c1f2" />
-        <range start1="99" end1="102" start2="110" end2="124" changelist="2b07bce4-0b4f-486e-b004-77ff1770c1f2" />
-        <range start1="103" end1="103" start2="125" end2="126" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navire.java">
-      <ranges>
-        <range start1="0" end1="1" start2="0" end2="2" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="2" end1="3" start2="3" end2="5" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="5" end1="6" start2="7" end2="7" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="7" end1="7" start2="8" end2="20" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="8" end1="9" start2="21" end2="22" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-        <range start1="10" end1="11" start2="23" end2="24" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="12" end1="13" start2="25" end2="26" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="17" end1="18" start2="30" end2="31" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="23" end1="23" start2="36" end2="37" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="24" end1="24" start2="38" end2="41" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="27" end1="28" start2="44" end2="45" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="29" end1="30" start2="46" end2="47" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="34" end1="35" start2="51" end2="52" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="36" end1="37" start2="53" end2="54" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="43" end1="43" start2="60" end2="134" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Menu.java">
-      <ranges>
-        <range start1="1" end1="3" start2="1" end2="3" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="4" end1="5" start2="4" end2="11" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="7" end1="13" start2="13" end2="14" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="14" end1="15" start2="15" end2="15" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="16" end1="19" start2="16" end2="17" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="21" end1="21" start2="19" end2="20" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="23" end1="24" start2="22" end2="22" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="25" end1="27" start2="23" end2="23" changelist="e4ff4686-744f-42b3-a608-f05c433202c9" />
-        <range start1="29" end1="29" start2="25" end2="26" changelist="e4ff4686-744f-42b3-a608-f05c433202c9" />
-        <range start1="31" end1="31" start2="28" end2="63" changelist="e4ff4686-744f-42b3-a608-f05c433202c9" />
-        <range start1="33" end1="33" start2="65" end2="66" changelist="e4ff4686-744f-42b3-a608-f05c433202c9" />
-        <range start1="40" end1="43" start2="73" end2="73" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="44" end1="44" start2="74" end2="83" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Croiseur.java">
-      <ranges>
-        <range start1="24" end1="25" start2="24" end2="25" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-        <range start1="29" end1="30" start2="29" end2="30" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Destroyer.java">
-      <ranges>
-        <range start1="20" end1="21" start2="20" end2="21" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="22" end1="22" start2="22" end2="23" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-        <range start1="26" end1="27" start2="27" end2="28" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Cuirasse.java">
-      <ranges>
-        <range start1="22" end1="23" start2="22" end2="23" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="25" end1="26" start2="25" end2="26" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-        <range start1="30" end1="31" start2="30" end2="31" changelist="abb35a72-82c5-4a75-85e5-c859f792088a" />
-      </ranges>
-    </file>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FzNHECB78TysIFGNjWrwJu0vx7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -114,23 +37,10 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Projet Bataille Navale" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -139,8 +49,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665490865487</updated>
+      <workItem from="1669294356984" duration="569000" />
+      <workItem from="1669297277229" duration="3792000" />
+      <workItem from="1669622132324" duration="1299000" />
     </task>
+    <task id="LOCAL-00001" summary="position bateau">
+      <created>1669294905928</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669294905928</updated>
+    </task>
+    <task id="LOCAL-00002" summary="All boats on one grid">
+      <created>1669300455588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669300455588</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -152,5 +83,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="position bateau" />
+    <MESSAGE value="All boats on one grid" />
+    <option name="LAST_COMMIT_MESSAGE" value="All boats on one grid" />
   </component>
 </project>

@@ -5,19 +5,28 @@ public class Navire implements I_Navire {
 
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
+    int x,y;
 
-
-    public void Deplacement (String orientation, int y, int x,int taille,String[][] bateau){
+    public boolean Deplacement (String orientation, int y, int x,int taille,String[][] bateau,boolean direction){
+        this.x = x;
+        this.y = y;
         if (Objects.equals(orientation, "vertical")) {
             if (x <= 0 | (x+taille) > Plateau.x/2){
-                positionnement(orientation, y, x,taille, bateau);
+                if (!positionnement(orientation, y, x,taille, bateau)){
+                    Resetcoord(orientation,direction);
+                    return false;
+                }
             }
         }
         if (Objects.equals(orientation, "horizontal")) {
             if (y <= 0 | (y+taille) > Plateau.y){
-                positionnement(orientation, y, x,taille, bateau);
+                if (!positionnement(orientation, y, x,taille, bateau)){
+                    Resetcoord(orientation,direction);
+                    return false;
+                }
             }
         }
+        return true;
     }
     //abstract public void Tir (int x, int y);
 
@@ -150,6 +159,22 @@ public class Navire implements I_Navire {
         return orientation;
     }
 
+    public void Resetcoord(String orientation,boolean direction){
+        if (Objects.equals(orientation, "vertical")) {
+            if (direction){
+                y+=1;
+            }else {
+                y-=1;
+            }
+        }
+        if (Objects.equals(orientation, "horizontal")) {
+            if (direction){
+                x+=1;
+            }else {
+                x-=1;
+            }
+        }
+    }
 
 }
 
