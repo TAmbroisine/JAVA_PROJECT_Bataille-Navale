@@ -15,6 +15,7 @@ public class Affichage {
 
         int separateur = x/2 + 1;
         public String [][] grid = new String[x+1][y];
+        public String [][] gridCPU = new String[x+1][y];
         public Grid1() {
             int n = 0;
             //initialize grid
@@ -35,6 +36,11 @@ public class Affichage {
                 for(int innerLoopValue = separateur; innerLoopValue<x+1;innerLoopValue++)
                 {
                     grid[innerLoopValue][outerLoopValue]= "|__";
+                }
+
+                for(int innerLoopValue = 0; innerLoopValue<16;innerLoopValue++)
+                {
+                    gridCPU[innerLoopValue][outerLoopValue]= "|--";
                 }
 
             }
@@ -62,6 +68,11 @@ public class Affichage {
                 }
             }
         }
+
+
+
+
+
         public void PrintGrid() {
             char ch = 'a';
             Nom_Grille();
@@ -74,6 +85,23 @@ public class Affichage {
                 for(int innerLoopValue = 0; innerLoopValue<x+1;innerLoopValue++)
                 {
                     System.out.print(grid[innerLoopValue][outerLoopValue]);
+                }
+                System.out.print("|");
+            }
+        }
+
+        public void PrintGridCPU() {
+            char ch = 'a';
+            Nom_Grille();
+            PrintHeader();
+            for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
+            {
+                System.out.println();
+                System.out.print(ch);
+                ch++;
+                for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
+                {
+                    System.out.print(gridCPU[innerLoopValue][outerLoopValue]);
                 }
                 System.out.print("|");
             }
