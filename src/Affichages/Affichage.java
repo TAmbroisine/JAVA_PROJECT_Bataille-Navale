@@ -1,4 +1,5 @@
-package Affichages;/*
+package Affichages;
+/*
 * Source:
 * https://stackoverflow.com/a/47400150
 * */

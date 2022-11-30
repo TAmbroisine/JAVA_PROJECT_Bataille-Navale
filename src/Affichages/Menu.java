@@ -75,10 +75,6 @@ public class Menu extends Affichage
 
             }
         }while (check);
-        if (lanceGame)
-        {
-            Game.start(); // à transformer en return
-        }
     }
     private static void PrintRegle()
     {

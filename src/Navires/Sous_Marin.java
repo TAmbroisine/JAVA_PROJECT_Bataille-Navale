@@ -24,10 +24,10 @@ public class Sous_Marin extends Navire
         pTire=1;
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|Sm";
-        if(user==true){
-            super.positionnement(this.orientation, this.y, this.x,taille, pattern );
+        if(user){
+            super.positionnement(this.orientation, this.y, this.x,taille, pattern,true );
         }else {
-            super.positionnementCPU(this.orientation, this.y, this.x,taille, pattern );
+            super.positionnementCPU(this.orientation, this.y, this.x,taille, pattern,true );
         }
 
         //super.Plateau.PrintGrid();

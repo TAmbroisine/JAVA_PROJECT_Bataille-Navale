@@ -7,7 +7,7 @@ public class Navire implements I_Navire {
 
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
-    int x,y,taille;
+    int x,y,taille, shipnumb;
     boolean direction;
     String orientation,pattern;
     String[][] bateau,tireB;
@@ -42,7 +42,7 @@ public class Navire implements I_Navire {
     private boolean AddMoveToGrid(){
         if (Objects.equals(orientation, "vertical")) {
             if (x <= 0 | (x+taille) > Plateau.x/2){
-                if (!positionnement(orientation, y, x,taille, pattern)){
+                if (!positionnement(orientation, y, x,taille, pattern,false)){
                     ResetCoord(orientation,direction);
                     return false;
                 }
@@ -50,7 +50,7 @@ public class Navire implements I_Navire {
         }
         if (Objects.equals(orientation, "horizontal")) {
             if (y <= 0 | (y+taille) > Plateau.y){
-                if (!positionnement(orientation, y, x,taille, pattern)){
+                if (!positionnement(orientation, y, x,taille, pattern,false)){
                     ResetCoord(orientation,direction);
                     return false;
                 }
@@ -61,44 +61,53 @@ public class Navire implements I_Navire {
 
     //abstract public void Tir (int x, int y);
 
-    public boolean positionnement(String orientation, int y, int x, int taille, String pattern) {
+    public boolean positionnement(String orientation, int y, int x, int taille, String pattern, boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
+            shipnumb++;
             if (Objects.equals(orientation, "vertical")) {
-                for (int i = y; i < (y + taille); i++) {
-                    bateau[x][i] = "|##";
+                bateau[x][y]= "|"+ shipnumb;
+                for (int i = y+1; i < (y + taille); i++) {
+                    bateau[x][i] = pattern;
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
-                for (int i = x; i < (x + taille); i++) {
-                    bateau[i][y] = "|##";
+                for (int i = x+1; i < (x + taille); i++) {
+                    bateau[i][y] = pattern;
                 }
             }
             Plateau.AddBoat(bateau);
             return true;
         }
-        else{
-            return false;
+        else if (init){
+            orientation = RandOrientation();
+            int[] coord = RandCoord(orientation,taille);
+            positionnement(orientation, y, x, taille, pattern,true);
         }
+        return false;
     }
 
-    public boolean positionnementCPU(String orientation, int y, int x, int taille, String pattern) {
+    public boolean positionnementCPU(String orientation, int y, int x, int taille, String pattern, boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
+            shipnumb++;
             if (Objects.equals(orientation, "vertical")) {
                 for (int i = y; i < (y + taille); i++) {
-                    bateau[x][i] = "|##";
+                    bateau[x][i] = pattern;
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
                 for (int i = x; i < (x + taille); i++) {
-                    bateau[i][y] = "|##";
+                    bateau[i][y] = pattern;
                 }
             }
             PlateauCPU.AddBoat(bateau);
             return true;
         }
-        else{
-            return false;
+        else if (init){
+            orientation = RandOrientation();
+            int[] coord = RandCoord(orientation,taille);
+            positionnementCPU(orientation, y, x, taille, pattern,init);
         }
+        return false;
     }
 
     private boolean CheckSpace(String orientation, int y, int x, int taille){
@@ -119,11 +128,15 @@ public class Navire implements I_Navire {
         return true;
     }
 
-    public void SpawnBoat(boolean user){
+    public void SpawnBoat(boolean user) throws Exception {
         // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins
+        shipnumb = 0;
         GenerateCroiseur(user);
+        shipnumb = 0;
         GenerateDestroyer(user);
+        shipnumb = 0;
         GenerateCuirrasse(user);
+        shipnumb = 0;
         GenerateSous_Marin(user);
         if(user){
             Plateau.PrintGrid();
@@ -173,10 +186,14 @@ public class Navire implements I_Navire {
         int[] coord = RandCoord(orientation,7);
         cuirasse = new Cuirasse(coord[0], coord[1], orientation,user);
     }
-    private void GenerateCroiseur(boolean user){
+    private void GenerateCroiseur(boolean user) throws Exception {
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,5);
-        croiseur = new Croiseur(coord[0], coord[1], orientation,user);
+        try {
+            croiseur = new Croiseur(coord[0], coord[1], orientation, user);
+        } catch ( Exception e){
+
+        }
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,5);

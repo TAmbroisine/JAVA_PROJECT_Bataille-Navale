@@ -2,12 +2,9 @@ package Navires;
 
 public class Destroyer extends Navire
 {
-    int x;
-    int y;
-    int pTire;
+    int x,y,pTire,taille,Pv;
     String orientation,pattern;
-    int taille;
-    String[][] bateau;
+    String[][] bateau,tireB;
     private Destroyer(){
         x = 0;
         y = 0;
@@ -24,10 +21,10 @@ public class Destroyer extends Navire
         pTire=1;
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|De";
-        if(user==true){
-            super.positionnement(this.orientation, this.y, this.x,taille,pattern );
+        if(user){
+            super.positionnement(this.orientation, this.y, this.x,taille,pattern,true );
         }else {
-            super.positionnementCPU(this.orientation, this.y, this.x,taille,pattern );
+            super.positionnementCPU(this.orientation, this.y, this.x,taille,pattern,true );
         }
 
         //super.Plateau.PrintGrid();

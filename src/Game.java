@@ -2,8 +2,7 @@ import Navires.Navire;
 
 public class Game {
     Navire bato;
-
-    Game(){
+    Game() throws Exception {
         bato = new Navire();
         // Generate user's boats
         bato.SpawnBoat(true);

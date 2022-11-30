@@ -21,7 +21,7 @@ public class Croiseur extends Navire
         tireB = new String[Plateau.x/2][Plateau.y];
     }
 
-    public Croiseur(int x, int y, String orientation,boolean user){
+    public Croiseur(int x, int y, String orientation, boolean user){
         this.x = x;
         this.y = y;
         this.orientation = orientation;
@@ -30,14 +30,11 @@ public class Croiseur extends Navire
         bateau = new String[Plateau.x/2][Plateau.y];
         tireB = new String[Plateau.x/2][Plateau.y];
         pattern = "|Cr";
-        if(user==true){
-            super.positionnement(this.orientation, this.y, this.x,taille,pattern );
+        if(user){
+            super.positionnement(this.orientation, this.y, this.x,taille,pattern,true );
         }else {
-            super.positionnementCPU(this.orientation, this.y, this.x,taille,pattern );
+            super.positionnementCPU(this.orientation, this.y, this.x,taille,pattern,true );
         }
-
-
-
     }
 /*
     @Override

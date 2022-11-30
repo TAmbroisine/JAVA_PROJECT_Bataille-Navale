@@ -27,10 +27,10 @@ public class Cuirasse extends Navire
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|Cu";
         if (user==true) {
-            super.positionnement(this.orientation, this.y, this.x, taille, pattern);
+            super.positionnement(this.orientation, this.y, this.x, taille, pattern,true);
         }
         else {
-            super.positionnementCPU(this.orientation, this.y, this.x, taille, pattern);
+            super.positionnementCPU(this.orientation, this.y, this.x, taille, pattern,true);
         }
         //super.Plateau.PrintGrid();
     }
