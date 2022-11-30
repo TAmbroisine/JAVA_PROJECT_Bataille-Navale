@@ -1,4 +1,5 @@
 import Navires.Navire;
+import java.util.Scanner;
 
 public class Game {
     Navire bato;
@@ -8,10 +9,13 @@ public class Game {
         bato.SpawnBoat(true);
         // Generate CPU's boats
         bato.SpawnBoat(false);
+
     }
 
     public void Start(){
+        while(true){
 
+        }
 
     }
 }
