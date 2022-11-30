@@ -257,30 +257,27 @@ public class Navire implements I_Navire {
                 tireB[i][j] = "|XX";
             }
         }
-        int separateur = x/2 + 1;
-        int n = 0;
         //initialize grid
         for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
         {
             // grille USER
             for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
             {
-                if(Objects.equals(tireB[2][1], Plateau.grid)){
-
+                if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
+                    return true;
                 }
             }
         }
-
-
-
-
-
-
-
-
-
         //Plateau.TireBoat(tireB);
         return false;
+    }
+
+    private boolean IsBoat(int x,int y){
+        return Objects.equals(PlateauCPU.grid[x][y], "|##");
+    }
+
+    private boolean IsRocket(int x,int y){
+        return Objects.equals(tireB[x][y], "|XX");
     }
 }
 

@@ -9,7 +9,6 @@ public class Game {
         bato.SpawnBoat(true);
         // Generate CPU's boats
         bato.SpawnBoat(false);
-
     }
 
     public void Start(){
