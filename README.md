@@ -1,9 +1,9 @@
 # Bataille Navale
 
-## Etape 1: Affichage (*console*)
-    - Affichage grille 
+## Etape 1: Affichages.Affichage (*console*)
+    - Affichages.Affichage grille 
         - affichage emplacement navires
-    - Affichage navires
+    - Affichages.Affichage navires
 
 ## Etape 2: Mouvement
     - placement navires

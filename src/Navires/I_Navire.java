@@ -1,5 +1,8 @@
 package Navires;
 
+
+import Affichages.Affichage;
+
 public interface I_Navire {
 
     Affichage.Grid1 Plateau = new Affichage.Grid1();

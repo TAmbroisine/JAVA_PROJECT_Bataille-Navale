@@ -1,3 +1,8 @@
+package Affichages;
+
+import Affichages.Affichage;
+import Navires.Navire;
+
 import java.util.Scanner;
 // Création du menu
 public class Menu extends Affichage
@@ -20,7 +25,7 @@ public class Menu extends Affichage
                     Affichage.Grid1 CPUGrid = new Affichage.Grid1();
                     Affichage.Grid1 PGrid = new Affichage.Grid1();
                     Navire navire = new Navire();
-                    navire.SpawnBoat();
+                    navire.SpawnBoat(true);
                     //PGrid.PrintGrid();
                     break;
                 case 2:

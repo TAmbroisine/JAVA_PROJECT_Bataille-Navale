@@ -1,4 +1,4 @@
-/*
+package Affichages;/*
 * Source:
 * https://stackoverflow.com/a/47400150
 * */
@@ -38,11 +38,6 @@ public class Affichage {
                     grid[innerLoopValue][outerLoopValue]= "|__";
                 }
 
-                for(int innerLoopValue = 0; innerLoopValue<16;innerLoopValue++)
-                {
-                    gridCPU[innerLoopValue][outerLoopValue]= "|--";
-                }
-
             }
         }
         public void AddBoat(String[][] Navire) {
@@ -68,9 +63,6 @@ public class Affichage {
                 }
             }
         }
-
-
-
 
 
         public void PrintGrid() {
