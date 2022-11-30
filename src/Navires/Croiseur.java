@@ -2,19 +2,16 @@ package Navires;
 
 public class Croiseur extends Navire
 {
-    int x;
-    int y;
-    int pTire;
+    int x,y,taille,pTire,Pv;
     String orientation,pattern;
-    int taille;
-    String[][] bateau;
-    String[][] tireB;
+    String[][] bateau,tireB;
 
     private Croiseur(){
         x = 0;
         y = 0;
         orientation = " ";
         taille = 5;
+        Pv= taille;
         pTire=4;
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|Cr";
@@ -26,6 +23,7 @@ public class Croiseur extends Navire
         this.y = y;
         this.orientation = orientation;
         taille = 5;
+        Pv= taille;
         pTire=4;
         bateau = new String[Plateau.x/2][Plateau.y];
         tireB = new String[Plateau.x/2][Plateau.y];

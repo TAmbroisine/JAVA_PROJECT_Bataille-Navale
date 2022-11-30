@@ -280,9 +280,15 @@ public class Navire implements I_Navire {
             // grille USER
             for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
             {
+                boolean flag= false;
                 if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
-                    return true;
+                    flag= true;
+                    Plateau.PrintTireImpact(outerLoopValue,innerLoopValue,flag);
+                }else {
+                    flag=false;
+                    Plateau.PrintTireImpact(outerLoopValue,innerLoopValue,flag);
                 }
+
             }
         }
         //Plateau.TireBoat(tireB);

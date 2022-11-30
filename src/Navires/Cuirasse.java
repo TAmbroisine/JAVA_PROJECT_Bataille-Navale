@@ -2,17 +2,15 @@ package Navires;
 
 public class Cuirasse extends Navire
 {
-    int x;
-    int y;
-    int taille;
-    int pTire;
+    int x,y,taille,pTire,Pv;
     String orientation,pattern;
-    String[][] bateau;
+    String[][] bateau,tireB;
     public Cuirasse(){
         x = 0;
         y = 0;
         orientation = " ";
         taille = 7;
+        Pv=taille;
         pTire=9;
         pattern = "|Cu";
         bateau = new String[Plateau.x][Plateau.y];
@@ -32,7 +30,6 @@ public class Cuirasse extends Navire
         else {
             super.positionnementCPU(this.orientation, this.y, this.x, taille, pattern,true);
         }
-        //super.Plateau.PrintGrid();
     }
 /*
     @Override

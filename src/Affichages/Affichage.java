@@ -65,6 +65,15 @@ public class Affichage {
             }
         }
 
+        public void PrintTireImpact(int x,int y, boolean flag) {
+            if(flag){
+                grid[x][y]= "|TT";
+            } else if (flag) {
+                grid[x][y]= "|XX";
+            }
+
+        }
+
 
         public void PrintGrid() {
             char ch = 'a';

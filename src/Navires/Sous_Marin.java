@@ -2,16 +2,16 @@ package Navires;
 
 public class Sous_Marin extends Navire
 {
-    int x;
-    int y;
-    int pTire;
+    int x,y,taille,pTire,Pv;
     String orientation,pattern;
-    int taille;
-    String[][] bateau;
+    String[][] bateau,tireB;
+
     private Sous_Marin(){
         x = 0;
         y = 0;
         pTire=1;
+        taille = 1;
+        Pv=taille;
         orientation = " ";
         pattern = "|Sm";
     }
@@ -21,6 +21,7 @@ public class Sous_Marin extends Navire
         this.y = y;
         this.orientation = orientation;
         taille = 1;
+        Pv=taille;
         pTire=1;
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|Sm";
@@ -29,8 +30,6 @@ public class Sous_Marin extends Navire
         }else {
             super.positionnementCPU(this.orientation, this.y, this.x,taille, pattern,true );
         }
-
-        //super.Plateau.PrintGrid();
     }/*
     @Override
     public void Tir(int x, int y) {

@@ -9,6 +9,8 @@ public class Destroyer extends Navire
         x = 0;
         y = 0;
         pTire=1;
+        taille = 3;
+        Pv=taille;
         orientation = " ";
         pattern = "|De";
     }
@@ -18,6 +20,7 @@ public class Destroyer extends Navire
         this.y = y;
         this.orientation = orientation;
         taille = 3;
+        Pv=taille;
         pTire=1;
         bateau = new String[Plateau.x/2][Plateau.y];
         pattern = "|De";
@@ -26,8 +29,6 @@ public class Destroyer extends Navire
         }else {
             super.positionnementCPU(this.orientation, this.y, this.x,taille,pattern,true );
         }
-
-        //super.Plateau.PrintGrid();
     }
 /*
     @Override
