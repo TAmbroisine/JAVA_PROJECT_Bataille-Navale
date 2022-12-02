@@ -17,8 +17,10 @@ public class MenuGame
                 if (choix == 1)
                 {
                     check = true;
+                    // apelle les méthodes qui TIRE
                 } else if (choix == 2)
                 {
+                    // apelle les méthodes qui DEPLACE
                     check = true;
                 }else
                 {
