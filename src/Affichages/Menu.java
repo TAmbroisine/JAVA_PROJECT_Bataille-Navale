@@ -3,6 +3,7 @@ package Affichages;
 import Affichages.Affichage;
 import Navires.Navire;
 
+import java.util.Objects;
 import java.util.Scanner;
 // Création du menu
 public class Menu extends Affichage
@@ -13,12 +14,12 @@ public class Menu extends Affichage
     {
         userReader = new Scanner(System.in);
     }
-    public void print()
+    public Boolean print()
     {
         int choix1, choix2;
         boolean check = false;
-        boolean lanceGame = false;
-
+        boolean lanceGame = true;
+        boolean boolean_error = false;
         System.out.println("--------------------------------------------------------------------");
         System.out.println("                 BIENVENUE DANS LA BATAILLE NAVALE");
         System.out.println("--------------------------------------------------------------------");
@@ -27,8 +28,9 @@ public class Menu extends Affichage
             switch (choix1 = userReader.nextInt()) {
                 case 1:
                     check = false;
-                    lanceGame = true;
-                    break;
+
+                    return(lanceGame);
+
                 case 2:
                     check = false;
                     //Pour charger une partie test
@@ -75,6 +77,7 @@ public class Menu extends Affichage
 
             }
         }while (check);
+        return(boolean_error);
     }
     private static void PrintRegle()
     {

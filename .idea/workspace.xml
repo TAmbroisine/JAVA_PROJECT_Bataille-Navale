@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Projet Bataille Navale:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Update Tyron">
-      <change afterPath="$PROJECT_DIR$/src/Global/Model.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MVCPattern.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Debut Work for 30/11/2022">
+      <change afterPath="$PROJECT_DIR$/src/Affichages/ResetConsole.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Affichages/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Croiseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/I_Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/I_Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichages/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
-    <list id="3934c4ae-c023-4d79-afa3-93ca90e77c6e" name="Changes by bavan" comment="Changes by bavan">
-      <change beforePath="$PROJECT_DIR$/src/Navires/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Croiseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
-    </list>
+    <list id="3934c4ae-c023-4d79-afa3-93ca90e77c6e" name="Changes by bavan" comment="Changes by bavan" />
     <list id="613c4e8a-860e-49d8-bfcf-ae2ed529cdd3" name="Changes by theworm" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,100 +36,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Navires/Cuirasse.java">
-      <ranges>
-        <range start1="4" end1="7" start2="4" end2="4" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="15" end1="16" start2="12" end2="12" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="18" end1="19" start2="14" end2="15" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="22" end1="22" start2="18" end2="19" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="24" end1="25" start2="21" end2="22" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="26" end1="28" start2="23" end2="25" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="30" end1="31" start2="27" end2="28" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Sous_Marin.java">
-      <ranges>
-        <range start1="4" end1="7" start2="4" end2="4" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="18" end1="19" start2="15" end2="16" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="22" end1="22" start2="19" end2="20" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="25" end1="26" start2="23" end2="24" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="28" end1="29" start2="26" end2="27" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="30" end1="31" start2="28" end2="29" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Navire.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="4" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="5" end1="6" start2="7" end2="8" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="9" end1="10" start2="11" end2="12" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="21" end1="21" start2="23" end2="24" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="23" end1="24" start2="26" end2="27" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="28" end1="37" start2="31" end2="36" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="41" end1="41" start2="40" end2="44" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="43" end1="45" start2="46" end2="48" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="51" end1="53" start2="54" end2="56" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="63" end1="64" start2="66" end2="67" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="65" end1="66" start2="68" end2="69" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="67" end1="68" start2="70" end2="70" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="77" end1="78" start2="79" end2="80" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="83" end1="84" start2="85" end2="88" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="88" end1="89" start2="92" end2="93" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="90" end1="91" start2="94" end2="95" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="92" end1="93" start2="96" end2="97" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="97" end1="98" start2="101" end2="102" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="101" end1="102" start2="105" end2="106" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="107" end1="108" start2="111" end2="114" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="115" end1="116" start2="121" end2="122" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="122" end1="123" start2="128" end2="129" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="131" end1="133" start2="137" end2="138" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="134" end1="135" start2="139" end2="139" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="136" end1="137" start2="140" end2="140" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="138" end1="139" start2="141" end2="141" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="141" end1="142" start2="143" end2="144" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="143" end1="144" start2="145" end2="146" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="150" end1="151" start2="152" end2="153" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="186" end1="187" start2="188" end2="189" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="188" end1="189" start2="190" end2="191" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="191" end1="197" start2="193" end2="194" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="199" end1="200" start2="196" end2="197" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="205" end1="206" start2="202" end2="203" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="209" end1="210" start2="206" end2="207" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="213" end1="214" start2="210" end2="211" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="219" end1="220" start2="216" end2="217" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="223" end1="224" start2="220" end2="221" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="227" end1="228" start2="224" end2="225" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="231" end1="232" start2="228" end2="229" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="282" end1="283" start2="279" end2="279" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="284" end1="286" start2="280" end2="281" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="287" end1="289" start2="282" end2="283" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="298" end1="299" start2="292" end2="293" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="304" end1="304" start2="298" end2="309" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Croiseur.java">
-      <ranges>
-        <range start1="4" end1="8" start2="4" end2="4" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="15" end1="16" start2="11" end2="12" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="17" end1="18" start2="13" end2="14" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="20" end1="21" start2="16" end2="17" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="24" end1="24" start2="20" end2="21" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="27" end1="29" start2="24" end2="26" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="31" end1="32" start2="28" end2="29" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="33" end1="34" start2="30" end2="31" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Destroyer.java">
-      <ranges>
-        <range start1="4" end1="7" start2="4" end2="5" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="17" end1="18" start2="15" end2="16" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="21" end1="21" start2="19" end2="20" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="24" end1="25" start2="23" end2="24" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="27" end1="28" start2="26" end2="27" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="29" end1="30" start2="28" end2="29" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -154,7 +52,10 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml"
+    "last_opened_file_path": "C:/Users/theworm/Documents/INGE3/POO Java/TP/JAVA_PROJECT_Bataille-Navale",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.16896552"
   }
 }]]></component>
   <component name="RunManager">
@@ -184,7 +85,6 @@
       <workItem from="1669622132324" duration="1299000" />
       <workItem from="1669714916953" duration="7703000" />
       <workItem from="1669813056384" duration="6968000" />
-      <workItem from="1670156613377" duration="11703000" />
     </task>
     <task id="LOCAL-00001" summary="position bateau">
       <created>1669294905928</created>
@@ -261,16 +161,5 @@
     <MESSAGE value="Work for 29/11/2022" />
     <MESSAGE value="Debut Work for 30/11/2022" />
     <option name="LAST_COMMIT_MESSAGE" value="Debut Work for 30/11/2022" />
-  </component>
-  <component name="XDebuggerManager">
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="((Croiseur)this).bateau" custom="Navires.Croiseur" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
