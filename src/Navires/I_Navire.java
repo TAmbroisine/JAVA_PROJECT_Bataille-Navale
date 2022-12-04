@@ -2,11 +2,12 @@ package Navires;
 
 
 import Affichages.Affichage;
+import Grid.Grid;
 
 public interface I_Navire {
 
-    Affichage.Grid1 Plateau = new Affichage.Grid1();
-    Affichage.Grid1 PlateauCPU = new Affichage.Grid1();
+    Grid Plateau = new Grid();
+    Grid PlateauCPU = new Grid();
 
     boolean positionnement(String orientation, int y, int x, int taille,String pattern, boolean init);
     boolean positionnementCPU(String orientation, int y, int x, int taille, String pattern, boolean init);

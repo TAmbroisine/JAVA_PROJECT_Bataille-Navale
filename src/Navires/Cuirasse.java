@@ -2,9 +2,6 @@ package Navires;
 
 public class Cuirasse extends Navire
 {
-    int x,y,taille,pTire,Pv;
-    String orientation,pattern;
-    String[][] bateau,tireB;
     public Cuirasse(){
         x = 0;
         y = 0;
@@ -13,22 +10,21 @@ public class Cuirasse extends Navire
         Pv=taille;
         pTire=9;
         pattern = "|Cu";
-        bateau = new String[Plateau.x][Plateau.y];
     }
 
-    public Cuirasse(int x, int y, String orientation,boolean user){
+    public Cuirasse(int x, int y, String orientation,boolean user,int shipnumb){
         this.x = x;
         this.y = y;
         this.orientation = orientation;
         taille = 7;
         pTire=9;
-        bateau = new String[Plateau.x/2][Plateau.y];
+        bateau = new String[Grid.x/2][Grid.y];
         pattern = "|Cu";
-        if (user==true) {
-            super.positionnement(this.orientation, this.y, this.x, taille, pattern,true);
+        if (user) {
+            super.positionnement(true);
         }
         else {
-            super.positionnementCPU(this.orientation, this.y, this.x, taille, pattern,true);
+            super.positionnementCPU(true);
         }
     }
 /*

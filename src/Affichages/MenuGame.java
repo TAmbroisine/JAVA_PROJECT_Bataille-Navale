@@ -26,6 +26,6 @@ public class MenuGame
                 {
                     System.out.println("ERREUR : Saisir [1] ou [2]");
                 }
-            }while (check = false);
+            }while (!check);
         }
 }

@@ -1,13 +1,15 @@
 package Navires;
 
+import Global.Model;
+
 import java.util.Objects;
 import java.util.Random;
 
-public class Navire implements I_Navire {
+public class Navire implements Model {
 
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
-    int x,y,taille, shipnumb;
+    int x,y,taille,pTire,Pv,shipnumb;
     boolean direction;
     String orientation,pattern;
     String[][] bateau,tireB;
@@ -19,38 +21,39 @@ public class Navire implements I_Navire {
     public Navire(){
         x = 0;
         y = 0;
+        shipnumb = 0;
         direction = false;
         orientation = "";
-        bateau = new String[Plateau.x/2][Plateau.y] ;
+        bateau = new String[Grid.x/2][Grid.y] ;
         pattern = "";
 
     }
 
-
-
-    public boolean Deplacement(String orientation, int y, int x, int taille, String[][] bateau, boolean direction,String pattern){
-        this.x = x;
-        this.y = y;
-        this.direction = direction;
-        this.orientation = orientation;
-        this.bateau = bateau;
-        this.pattern = pattern;
+    /**
+     * Move the boat to the given coordonates
+     * @return
+     */
+    public boolean Deplacement(){
         IncrementCoord();
         return AddMoveToGrid();
     }
 
+    /**
+     * Try to execute move and register
+     * @return boolean reprensenting the possibility of the move
+     */
     private boolean AddMoveToGrid(){
         if (Objects.equals(orientation, "vertical")) {
-            if (x <= 0 | (x+taille) > Plateau.x/2){
-                if (!positionnement(orientation, y, x,taille, pattern,false)){
+            if (x <= 0 | (x+taille) > Grid.x/2){
+                if (!positionnement(false)){
                     ResetCoord(orientation,direction);
                     return false;
                 }
             }
         }
         if (Objects.equals(orientation, "horizontal")) {
-            if (y <= 0 | (y+taille) > Plateau.y){
-                if (!positionnement(orientation, y, x,taille, pattern,false)){
+            if (y <= 0 | (y+taille) > Grid.y){
+                if (!positionnement(false)){
                     ResetCoord(orientation,direction);
                     return false;
                 }
@@ -61,11 +64,10 @@ public class Navire implements I_Navire {
 
     //abstract public void Tir (int x, int y);
 
-    public boolean positionnement(String orientation, int y, int x, int taille, String pattern, boolean init) {
+    public boolean positionnement(boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
-            shipnumb++;
+            bateau[x][y] = "|0" + shipnumb;
             if (Objects.equals(orientation, "vertical")) {
-                bateau[x][y]= "|"+ shipnumb;
                 for (int i = y+1; i < (y + taille); i++) {
                     bateau[x][i] = pattern;
                 }
@@ -75,37 +77,41 @@ public class Navire implements I_Navire {
                     bateau[i][y] = pattern;
                 }
             }
-            Plateau.AddBoat(bateau);
+            Grid.AddBoat(bateau);
             return true;
         }
         else if (init){
             orientation = RandOrientation();
             int[] coord = RandCoord(orientation,taille);
-            positionnement(orientation, y, x, taille, pattern,true);
+            x = coord[0];
+            y = coord[1];
+            positionnement(true);
         }
         return false;
     }
 
-    public boolean positionnementCPU(String orientation, int y, int x, int taille, String pattern, boolean init) {
+    public boolean positionnementCPU(boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
-            shipnumb++;
+            bateau[x][y] = "|0" + shipnumb;
             if (Objects.equals(orientation, "vertical")) {
-                for (int i = y; i < (y + taille); i++) {
+                for (int i = y+1; i < (y + taille); i++) {
                     bateau[x][i] = pattern;
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
-                for (int i = x; i < (x + taille); i++) {
+                for (int i = x+1; i < (x + taille); i++) {
                     bateau[i][y] = pattern;
                 }
             }
-            PlateauCPU.AddBoat(bateau);
+            GridCPU.AddBoat(bateau);
             return true;
         }
         else if (init){
             orientation = RandOrientation();
             int[] coord = RandCoord(orientation,taille);
-            positionnementCPU(orientation, y, x, taille, pattern,init);
+            x = coord[0];
+            y = coord[1];
+            positionnementCPU(true);
         }
         return false;
     }
@@ -113,14 +119,14 @@ public class Navire implements I_Navire {
     private boolean CheckSpace(String orientation, int y, int x, int taille){
         if (Objects.equals(orientation, "vertical")) {
             for (int i = y; i < (y + taille); i++) {
-                if (Objects.equals(Plateau.grid[x][i], "|##")) {
+                if (!Objects.equals(Grid.grid[x][i], "|__")) {
                     return false;
                 }
             }
         }
         else if (Objects.equals(orientation, "horizontal")) {
             for (int i = x; i < (x + taille); i++) {
-                if (Objects.equals(Plateau.grid[i][y], "|##")){
+                if (!Objects.equals(Grid.grid[i][y], "|__")){
                     return false;
                 }
             }
@@ -132,23 +138,20 @@ public class Navire implements I_Navire {
         // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins
         shipnumb = 0;
         GenerateCroiseur(user);
-        shipnumb = 0;
         GenerateDestroyer(user);
-        shipnumb = 0;
         GenerateCuirrasse(user);
-        shipnumb = 0;
         GenerateSous_Marin(user);
         if(user){
-            Plateau.PrintGrid();
+            PrintGrid();
         }else {
-            PlateauCPU.PrintGrid();
+            PrintGridCPU();
         }
 
     }
 
     private int[] RandCoord(String orientation, int taille){
         int borneInf= 0;
-        int borneSup= Plateau.y;
+        int borneSup= Grid.y;
         int[] nb = new int[2];
         Random random= new Random();
         if (Objects.equals(orientation, "horizontal")) {
@@ -184,30 +187,25 @@ public class Navire implements I_Navire {
     private void GenerateCuirrasse(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,7);
-        cuirasse = new Cuirasse(coord[0], coord[1], orientation,user);
+        cuirasse = new Cuirasse(coord[0], coord[1], orientation,user,1);
     }
-    private void GenerateCroiseur(boolean user) throws Exception {
+    private void GenerateCroiseur(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,5);
-        try {
-            croiseur = new Croiseur(coord[0], coord[1], orientation, user);
-        } catch ( Exception e){
-
-        }
-
+        croiseur = new Croiseur(coord[0], coord[1], orientation, user,1);
         orientation = RandOrientation();
         coord = RandCoord(orientation,5);
-        croiseur1 = new Croiseur(coord[0], coord[1], orientation,user);
+        croiseur1 = new Croiseur(coord[0], coord[1], orientation,user,2);
     }
 
     private void GenerateDestroyer(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,3);
-        destroyer = new Destroyer(coord[0], coord[1], orientation,user);
+        destroyer = new Destroyer(coord[0], coord[1], orientation,user,1);
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,3);
-        destroyer1 = new Destroyer(coord[0], coord[1], orientation,user);
+        destroyer1 = new Destroyer(coord[0], coord[1], orientation,user,2);
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,3);
@@ -217,19 +215,19 @@ public class Navire implements I_Navire {
     private void GenerateSous_Marin(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,1);
-        Sous_Marin = new Sous_Marin(coord[0], coord[1], orientation,user);
+        Sous_Marin = new Sous_Marin(coord[0], coord[1], orientation,user,1);
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,1);
-        Sous_Marin1 = new Sous_Marin(coord[0], coord[1], orientation,user);
+        Sous_Marin1 = new Sous_Marin(coord[0], coord[1], orientation,user,2);
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,1);
-        Sous_Marin2 = new Sous_Marin(coord[0], coord[1], orientation,user);
+        Sous_Marin2 = new Sous_Marin(coord[0], coord[1], orientation,user,3);
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,1);
-        Sous_Marin3 = new Sous_Marin(coord[0], coord[1], orientation,user);
+        Sous_Marin3 = new Sous_Marin(coord[0], coord[1], orientation,user,4);
     }
 
     private void IncrementCoord(){
@@ -280,13 +278,10 @@ public class Navire implements I_Navire {
             // grille USER
             for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
             {
-                boolean flag= false;
                 if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
-                    flag= true;
-                    Plateau.PrintTireImpact(outerLoopValue,innerLoopValue,flag);
+                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,true);
                 }else {
-                    flag=false;
-                    Plateau.PrintTireImpact(outerLoopValue,innerLoopValue,flag);
+                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,false);
                 }
 
             }
@@ -296,11 +291,22 @@ public class Navire implements I_Navire {
     }
 
     private boolean IsBoat(int x,int y){
-        return Objects.equals(PlateauCPU.grid[x][y], "|##");
+        return Objects.equals(GridCPU.grid[x][y], "|##");
     }
 
     private boolean IsRocket(int x,int y){
         return Objects.equals(tireB[x][y], "|XX");
+    }
+
+    private void PrintGrid(){
+        Screen.Nom_Grille(Grid.getX());
+        Screen.PrintHeader(Grid.getX());
+        Screen.PrintGrid(Grid.getGrid(), Grid.getX(), Grid.getY());
+    }
+    private void PrintGridCPU(){
+        Screen.Nom_Grille(GridCPU.getX());
+        Screen.PrintHeader(GridCPU.getX());
+        Screen.PrintGrid(GridCPU.getGrid(), GridCPU.getX(), GridCPU.getY());
     }
 }
 

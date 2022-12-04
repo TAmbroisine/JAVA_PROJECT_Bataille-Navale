@@ -2,9 +2,6 @@ package Navires;
 
 public class Sous_Marin extends Navire
 {
-    int x,y,taille,pTire,Pv;
-    String orientation,pattern;
-    String[][] bateau,tireB;
 
     private Sous_Marin(){
         x = 0;
@@ -16,19 +13,19 @@ public class Sous_Marin extends Navire
         pattern = "|Sm";
     }
 
-    public Sous_Marin(int x, int y, String orientation,boolean user){
+    public Sous_Marin(int x, int y, String orientation,boolean user,int shipnumb){
         this.x = x;
         this.y = y;
         this.orientation = orientation;
         taille = 1;
         Pv=taille;
         pTire=1;
-        bateau = new String[Plateau.x/2][Plateau.y];
+        bateau = new String[Grid.x/2][Grid.y];
         pattern = "|Sm";
         if(user){
-            super.positionnement(this.orientation, this.y, this.x,taille, pattern,true );
+            super.positionnement(true);
         }else {
-            super.positionnementCPU(this.orientation, this.y, this.x,taille, pattern,true );
+            super.positionnementCPU(true);
         }
     }/*
     @Override
