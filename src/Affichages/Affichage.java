@@ -76,6 +76,7 @@ public class Affichage {
 
 
         public void PrintGrid() {
+            ResetConsole.FullClear();
             char ch = 'a';
             Nom_Grille();
             PrintHeader();
@@ -101,7 +102,7 @@ public class Affichage {
                 System.out.println();
                 System.out.print(ch);
                 ch++;
-                for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
+                for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++) // < x+1 ??
                 {
                     System.out.print(gridCPU[innerLoopValue][outerLoopValue]);
                 }
