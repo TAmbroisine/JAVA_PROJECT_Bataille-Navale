@@ -86,6 +86,7 @@ public class Menu extends Affichage
         System.out.println("--------------------------------------------------------------------");
         System.out.println("\n" +
                 "En début de jeu les navires sont positionnés aléatoirement sur la grille, Votre but est de détruire tous les navires adverses ! \n" +
+                "Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins \n" +
                 "Petites particularitées : \n"+
                 "LES BATEAUX NAVIGUE PENDANT LA PARTIE \n" +
                 "\n"+
