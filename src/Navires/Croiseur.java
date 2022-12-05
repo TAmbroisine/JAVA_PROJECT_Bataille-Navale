@@ -14,7 +14,7 @@ public class Croiseur extends Navire
         tireB = new String[Grid.x/2][Grid.y];
     }
 
-    public Croiseur(int x, int y, String orientation, boolean user){
+    public Croiseur(int x, int y, String orientation, boolean user,int shipnumb){
         this.x = x;
         this.y = y;
         this.orientation = orientation;

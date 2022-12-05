@@ -16,6 +16,7 @@ public class Cuirasse extends Navire
         this.x = x;
         this.y = y;
         this.orientation = orientation;
+        this.shipnumb = shipnumb;
         taille = 7;
         pTire=9;
         bateau = new String[Grid.x/2][Grid.y];

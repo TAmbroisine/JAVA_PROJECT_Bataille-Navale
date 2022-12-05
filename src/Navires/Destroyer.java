@@ -17,6 +17,7 @@ public class Destroyer extends Navire
         this.x = x;
         this.y = y;
         this.orientation = orientation;
+        this.shipnumb = shipnumb;
         taille = 3;
         Pv=taille;
         pTire=1;

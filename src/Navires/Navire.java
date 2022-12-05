@@ -135,8 +135,7 @@ public class Navire implements Model {
     }
 
     public void SpawnBoat(boolean user) throws Exception {
-        // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins
-        shipnumb = 0;
+        // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins/
         GenerateCroiseur(user);
         GenerateDestroyer(user);
         GenerateCuirrasse(user);
@@ -209,7 +208,7 @@ public class Navire implements Model {
 
         orientation = RandOrientation();
         coord = RandCoord(orientation,3);
-        destroyer2 = new Destroyer(coord[0], coord[1], orientation,user);
+        destroyer2 = new Destroyer(coord[0], coord[1], orientation,user,3);
     }
 
     private void GenerateSous_Marin(boolean user){

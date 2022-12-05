@@ -17,6 +17,7 @@ public class Sous_Marin extends Navire
         this.x = x;
         this.y = y;
         this.orientation = orientation;
+        this.shipnumb = shipnumb;
         taille = 1;
         Pv=taille;
         pTire=1;
