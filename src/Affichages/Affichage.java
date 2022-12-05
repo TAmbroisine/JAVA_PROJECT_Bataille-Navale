@@ -22,6 +22,7 @@ public class Affichage {
             }
             System.out.print("|");
         }
+        System.out.println();
     }
 
     //View

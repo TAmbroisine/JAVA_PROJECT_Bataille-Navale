@@ -52,8 +52,8 @@ public class Menu extends Affichage
                                 break;
                             case 2:
                                 //touches du jeu
-                                System.out.println("--------------------------------------------------------------------");
-                                System.out.println("                  BIENVENUE DANS LES COMMANDES");
+                                System.out.println("--------------------BIENVENUE DANS LES COMMANDE---------------------");
+                                                                                                                               System.out.println("                DES");
                                 System.out.println("--------------------------------------------------------------------");
                                 break;
                             case 9:
@@ -67,7 +67,7 @@ public class Menu extends Affichage
                 case 9:
                     check = false;
                     //Pour quitter la partie
-                    System.out.println("cls");
+                    System.out.println("cls");//remplaçable
                     System.out.println("Vous avez quitté la partie");
                     break;
                 default:

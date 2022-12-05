@@ -28,7 +28,12 @@ public class Sous_Marin extends Navire
         }else {
             super.positionnementCPU(true);
         }
-    }/*
+    }
+    public int GetNum_Sous_Marin(){
+        return shipnumb;
+    }
+    /*
+
     @Override
     public void Tir(int x, int y) {
 
