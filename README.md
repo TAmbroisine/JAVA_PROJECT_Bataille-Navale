@@ -39,7 +39,8 @@
 
 ## Plan d'action
 
-- Finir le menu (déplacement/tir)
-- tester les fonction
+- Finir la classe MenuGame (déplacement/tir)
+  - Plus  blindage de la classe Menu
+- tester les fonctions
 - Gestion des dégats (diminution des hp, ...)
 - faire IA
