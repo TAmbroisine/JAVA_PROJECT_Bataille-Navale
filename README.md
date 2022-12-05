@@ -27,11 +27,19 @@
 
 ## Progrès Global
 
-| Etape  | Progrès |
-|--------|---------|
-| 1      | Fait    |
-| 2      | En cours|
-| 3      | A faire |
-| 4      | A faire |
-| ------ | ------  |
-| Fait   | 30 %    |
+| Etape  | Progrès  |
+|--------|----------|
+| 1      | Fait     |
+| 2      | A tester |
+| 3      | A tester |
+| 4      | A faire  |
+| ------ | ------   |
+| Fait   | 73 %     |
+
+
+## Plan d'action
+
+- Finir le menu (déplacement/tir)
+- tester les fonction
+- Gestion des dégats (diminution des hp, ...)
+- faire IA

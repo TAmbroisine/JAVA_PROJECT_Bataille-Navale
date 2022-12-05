@@ -11,12 +11,13 @@ public class Navire implements Model {
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
     int x,y,taille,pTire,Pv,shipnumb;
     boolean direction;
-    String orientation,pattern;
+    public String orientation;
+    String pattern;
     String[][] bateau,tireB;
-    Cuirasse cuirasse;
-    Croiseur croiseur,croiseur1;
-    Destroyer destroyer,destroyer1,destroyer2;
-    Sous_Marin Sous_Marin,Sous_Marin1,Sous_Marin2,Sous_Marin3;
+    public Cuirasse cuirasse;
+    public Croiseur croiseur,croiseur1;
+    public Destroyer destroyer,destroyer1,destroyer2;
+    public Sous_Marin Sous_Marin,Sous_Marin1,Sous_Marin2,Sous_Marin3;
 
     public Navire(){
         x = 0;
@@ -33,7 +34,8 @@ public class Navire implements Model {
      * Move the boat to the given coordonates
      * @return
      */
-    public boolean Deplacement(){
+    public boolean Deplacement(boolean direction){
+        this.direction = direction;
         IncrementCoord();
         return AddMoveToGrid();
     }
@@ -306,6 +308,10 @@ public class Navire implements Model {
         Screen.Nom_Grille(GridCPU.getX());
         Screen.PrintHeader(GridCPU.getX());
         Screen.PrintGrid(GridCPU.getGrid(), GridCPU.getX(), GridCPU.getY());
+    }
+
+    public String getOrientation() {
+        return orientation;
     }
 }
 

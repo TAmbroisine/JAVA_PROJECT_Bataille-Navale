@@ -3,7 +3,7 @@ import Navires.Navire;
 
 public class Player {
     private Grid board;  // Game board for this player
-    private Navire navires;
+    public Navire navires;
     private int numShips;  // Number of remaining ships for this player
 
     // Constructor to create a player with a given game board
