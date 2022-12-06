@@ -21,7 +21,7 @@
 
 ## Etape 4: Ordinateur
     - Notion d'intelligence de l' ordinateur
-        - aléatoire débile
+        - aléatoire débile Ok 
         -  aléatoire réduite autour des bateaux du joueurs
         - implémentation de l'IA A* (avec calcul de probabilité)
 

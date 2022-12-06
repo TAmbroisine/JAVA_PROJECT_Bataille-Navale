@@ -9,7 +9,7 @@ public class Cuirasse extends Navire
         taille = 7;
         Pv=taille;
         pTire=9;
-        pattern = "|Cu";
+        pattern = "|U";
     }
 
     public Cuirasse(int x, int y, String orientation,boolean user,int shipnumb){

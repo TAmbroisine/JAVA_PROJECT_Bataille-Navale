@@ -72,15 +72,15 @@ public class Navire implements Model {
 
     public boolean positionnement(boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
-            bateau[x][y] = "|0" + shipnumb;
+            //bateau[x][y] = "|0" + shipnumb;
             if (Objects.equals(orientation, "vertical")) {
-                for (int i = y+1; i < (y + taille); i++) {
-                    bateau[x][i] = pattern;
+                for (int i = y; i < (y + taille); i++) {
+                    bateau[x][i] = pattern+ shipnumb;
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
-                for (int i = x+1; i < (x + taille); i++) {
-                    bateau[i][y] = pattern;
+                for (int i = x; i < (x + taille); i++) {
+                    bateau[i][y] = pattern+ shipnumb;
                 }
             }
             Grid.AddBoat(bateau);
@@ -97,16 +97,16 @@ public class Navire implements Model {
     }
 
     public boolean positionnementCPU(boolean init) {
-        if (CheckSpace(orientation,y,x,taille)) {
-            bateau[x][y] = "|0" + shipnumb;
+        if (CheckSpaceCPU(orientation,y,x,taille)) {
+            //bateau[x][y] = "|0" + shipnumb;
             if (Objects.equals(orientation, "vertical")) {
-                for (int i = y+1; i < (y + taille); i++) {
-                    bateau[x][i] = pattern;
+                for (int i = y; i < (y + taille); i++) {
+                    bateau[x][i] = pattern+ shipnumb;
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
-                for (int i = x+1; i < (x + taille); i++) {
-                    bateau[i][y] = pattern;
+                for (int i = x; i < (x + taille); i++) {
+                    bateau[i][y] = pattern+ shipnumb;
                 }
             }
             GridCPU.AddBoat(bateau);
@@ -345,5 +345,6 @@ public class Navire implements Model {
     public String getOrientation() {
         return orientation;
     }
+
 }
 

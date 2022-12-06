@@ -12,7 +12,7 @@ public class Destroyer extends Navire
         taille = 3;
         Pv=taille;
         orientation = " ";
-        pattern = "|De";
+        pattern = "|D";
     }
 
     public Destroyer(int x, int y, String orientation,boolean user,int shipnumb){

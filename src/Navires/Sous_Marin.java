@@ -10,7 +10,7 @@ public class Sous_Marin extends Navire
         taille = 1;
         Pv=taille;
         orientation = " ";
-        pattern = "|Sm";
+        pattern = "|S";
     }
 
     public Sous_Marin(int x, int y, String orientation,boolean user,int shipnumb){
