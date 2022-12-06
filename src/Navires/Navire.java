@@ -139,9 +139,27 @@ public class Navire implements Model {
         }
         return true;
     }
+    private boolean CheckSpaceCPU(String orientation, int y, int x, int taille){
+        if (Objects.equals(orientation, "vertical")) {
+            for (int i = y; i < (y + taille); i++) {
+                if (!Objects.equals(GridCPU.grid[x][i], "|__")) {
+                    return false;
+                }
+            }
+        }
+        else if (Objects.equals(orientation, "horizontal")) {
+            for (int i = x; i < (x + taille); i++) {
+                if (!Objects.equals(GridCPU.grid[i][y], "|__")){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 
     public void SpawnBoat(boolean user) throws Exception {
         // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins/
+
         GenerateCroiseur(user);
         GenerateDestroyer(user);
         GenerateCuirrasse(user);
