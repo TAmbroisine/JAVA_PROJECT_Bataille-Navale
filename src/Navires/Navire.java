@@ -1,6 +1,8 @@
 package Navires;
 
 import Global.Model;
+import Grid.Grid;
+
 
 import java.util.Objects;
 import java.util.Random;
@@ -25,8 +27,10 @@ public class Navire implements Model {
         shipnumb = 0;
         direction = false;
         orientation = "";
-        bateau = new String[Grid.x/2][Grid.y] ;
         pattern = "";
+        bateau = new String[Grid.x/2][Grid.y];
+        tireB = new String[Grid.x/2][Grid.y];
+
 
     }
 
@@ -266,7 +270,7 @@ public class Navire implements Model {
         }
     }
 
-    public boolean CheckImpact(int y, int x, int pTire) {
+    public boolean CheckImpact( int x,int y) {
 
         for (int i = y; i < (y + pTire); i++) {
             for(int j=x;j<(x+pTire);j++){
@@ -280,8 +284,36 @@ public class Navire implements Model {
             for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
             {
                 if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
+                    //Add impact on boat
                     Grid.AddTireImpact(outerLoopValue,innerLoopValue,true);
-                }else {
+                }else if (IsRocket(outerLoopValue,innerLoopValue)){
+                    //Add impact in water
+                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,false);
+                }
+
+            }
+        }
+        //Plateau.TireBoat(tireB);
+        return false;
+    }
+    public boolean CheckImpactCPU( int x,int y) {
+
+        for (int i = y; i < (y + pTire); i++) {
+            for(int j=x;j<(x+pTire);j++){
+                tireB[i][j] = "|XX";
+            }
+        }
+        //initialize grid
+        for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
+        {
+            // grille USER
+            for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
+            {
+                if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
+                    //Add impact on boat
+                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,true);
+                }else if (IsRocket(outerLoopValue,innerLoopValue)){
+                    //Add impact in water
                     Grid.AddTireImpact(outerLoopValue,innerLoopValue,false);
                 }
 

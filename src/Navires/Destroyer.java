@@ -1,5 +1,7 @@
 package Navires;
 
+import Global.Model;
+
 public class Destroyer extends Navire
 {
 
@@ -21,8 +23,7 @@ public class Destroyer extends Navire
         taille = 3;
         Pv=taille;
         pTire=1;
-        bateau = new String[Grid.x/2][Grid.y];
-        pattern = "|De";
+        pattern = "|D";
         if(user){
             super.positionnement(true);
         }else {

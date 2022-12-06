@@ -40,7 +40,7 @@
 ## Plan d'action
 
 - Finir la classe MenuGame (déplacement/tir)
-  - Plus  blindage de la classe Menu
+- Finir CheckImpact et CheckImpactCPU
 - tester les fonctions
 - Gestion des dégats (diminution des hp, ...)
 - faire IA

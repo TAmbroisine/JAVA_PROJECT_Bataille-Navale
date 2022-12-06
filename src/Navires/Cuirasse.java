@@ -19,8 +19,7 @@ public class Cuirasse extends Navire
         this.shipnumb = shipnumb;
         taille = 7;
         pTire=9;
-        bateau = new String[Grid.x/2][Grid.y];
-        pattern = "|Cu";
+        pattern = "|U";
         if (user) {
             super.positionnement(true);
         }

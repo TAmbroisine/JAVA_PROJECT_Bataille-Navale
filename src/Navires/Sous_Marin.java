@@ -21,8 +21,7 @@ public class Sous_Marin extends Navire
         taille = 1;
         Pv=taille;
         pTire=1;
-        bateau = new String[Grid.x/2][Grid.y];
-        pattern = "|Sm";
+        pattern = "|S";
         if(user){
             super.positionnement(true);
         }else {

@@ -9,9 +9,7 @@ public class Croiseur extends Navire
         taille = 5;
         Pv= taille;
         pTire=4;
-        bateau = new String[Grid.x/2][Grid.y];
-        pattern = "|Cr";
-        tireB = new String[Grid.x/2][Grid.y];
+        pattern = "|C";
     }
 
     public Croiseur(int x, int y, String orientation, boolean user,int shipnumb){
@@ -22,9 +20,7 @@ public class Croiseur extends Navire
         taille = 5;
         Pv= taille;
         pTire=4;
-        bateau = new String[Grid.x/2][Grid.y];
-        tireB = new String[Grid.x/2][Grid.y];
-        pattern = "|Cr";
+        pattern = "|C";
         if(user){
             positionnement(true);
         }else {

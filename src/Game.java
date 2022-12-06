@@ -14,10 +14,8 @@ public class Game {
 
     public void Starting_GAME (boolean ChoixUser) throws Exception {
         while (ChoixUser) {
-            Navires.Navire navire = new Navires.Navire();
-            navire.SpawnBoat(true);
-            navire.SpawnBoat(false);
-
+            player.navires.SpawnBoat(true);
+            CPU.navires.SpawnBoat(false);
             ChoixUser = false;
         }
     }
@@ -40,6 +38,8 @@ public class Game {
                             player.navires.Sous_Marin.Deplacement(menugame.WichDirection(player.navires.Sous_Marin.getOrientation()));
                         }else{
                             //tire
+                            Object[] coord = menugame.CoordonatesShoots();
+                            player.navires.Sous_Marin.CheckImpact((int)coord[0],(char)coord[1]);
                         }
                         case 2 :
                         if (menugame.ShootOrMove()){
