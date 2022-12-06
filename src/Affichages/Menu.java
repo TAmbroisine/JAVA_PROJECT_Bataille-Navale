@@ -25,7 +25,7 @@ public class Menu extends Affichage
         System.out.println("--------------------------------------------------------------------");
         do {
             PrintMenu();
-            switch (choix1 = userReader.nextInt()) {
+            switch (choix1 = userReader.nextInt()) {// demande a l'utilisateur d'entrer la valeur qu'il souhaite
                 case 1:
                     check = false;
 
@@ -86,7 +86,12 @@ public class Menu extends Affichage
         System.out.println("--------------------------------------------------------------------");
         System.out.println("\n" +
                 "En début de jeu les navires sont positionnés aléatoirement sur la grille, Votre but est de détruire tous les navires adverses ! \n" +
-                "Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins \n" +
+                "Chaque joueur possède une flotte de 10 navires :\n"+
+                                "\t1 Cuirassé (U1) \n"+
+                                "\t2 Croiseurs (C1) (C2)\n"+
+                                "\t3 Destroyers (D1) (D2) (D3)\n"+
+                                "\t4 Sous-marins (S1) (S2) (S3) (S4)\n" +
+                "\n"+
                 "Petites particularitées : \n"+
                 "LES BATEAUX NAVIGUE PENDANT LA PARTIE \n" +
                 "\n"+
