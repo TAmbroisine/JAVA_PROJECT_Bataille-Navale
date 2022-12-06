@@ -98,7 +98,6 @@ public class MenuGame
             } else if (choice == 2)
             {
                 // apelle les méthodes qui DEPLACE
-
                 return false;
             }else
             {
@@ -108,6 +107,37 @@ public class MenuGame
         }while (choice !=1 & choice!= 2);
         return  false;
     }
+  public Object[] CoordonatesShoots ()
+  {
+      int x = 0;
+      char y;
+      ArrayList<Integer> RangeX = new ArrayList<Integer>();
+      for (int i = 0; i < 16;i++){
+          RangeX.add(i);
+      }
+      ArrayList<Character> RangeY = new ArrayList<Character>();
+      char n = 'a';
+      for (int k = 0; k < 16; k++)
+      {
+          RangeY.add(n);
+          n++;
+      }
+      System.out.println("Sélectionner la coordonnee en x");
+      x = userReader.nextInt();
+      while (!RangeX.contains(x))
+      {
+          System.out.println(" ERREUR : reselectionner la coordonee en x");
+          x = userReader.nextInt();
+      }
+      System.out.println("Sélectionner la coordonnée en minuscule y");
+      y = userReader.next().charAt(0);
+      while (!RangeY.contains(y))
+      {
+          System.out.println("ERREUR : reselectionner la coordonee en y");
+          y = userReader.next().charAt(0);
+      }
+      return new Object[] {x,y};
+  }
    public boolean WichDirection(String orientation){
         int choice;
         List<Integer> list = Arrays.asList(1, 2);
