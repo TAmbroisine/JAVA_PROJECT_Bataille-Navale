@@ -8,7 +8,7 @@ public class Sous_Marin extends Navire
         y = 0;
         pTire=1;
         taille = 1;
-        Pv=taille;
+        boatHp =taille;
         orientation = " ";
         pattern = "|S";
     }
@@ -19,7 +19,8 @@ public class Sous_Marin extends Navire
         this.orientation = orientation;
         this.shipnumb = shipnumb;
         taille = 1;
-        Pv=taille;
+        boatHp =taille;
+        //By default, pTire = 1
         pTire=1;
         pattern = "|S";
         if(user){

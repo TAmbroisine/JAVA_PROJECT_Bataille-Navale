@@ -1,7 +1,5 @@
 package Navires;
 
-import Global.Model;
-
 public class Destroyer extends Navire
 {
 
@@ -10,7 +8,7 @@ public class Destroyer extends Navire
         y = 0;
         pTire=1;
         taille = 3;
-        Pv=taille;
+        boatHp =taille;
         orientation = " ";
         pattern = "|D";
     }
@@ -21,7 +19,7 @@ public class Destroyer extends Navire
         this.orientation = orientation;
         this.shipnumb = shipnumb;
         taille = 3;
-        Pv=taille;
+        boatHp =taille;
         pTire=1;
         pattern = "|D";
         if(user){

@@ -43,10 +43,10 @@ public class Grid {
                     /* if navire[x][y]== |## -> grid[x][y] = |##
                         Implémente le bateau dans la grille
                     */
-                if (!Objects.equals(Navire[outerLoopValue][innerLoopValue], "|__")){
-                    if(Navire[outerLoopValue][innerLoopValue] != null)
+                if (!Objects.equals(Navire[innerLoopValue][outerLoopValue], "|__")){
+                    if(Navire[innerLoopValue][outerLoopValue] != null)
                     {
-                        grid[outerLoopValue][innerLoopValue] = Navire[outerLoopValue][innerLoopValue];
+                        grid[innerLoopValue][outerLoopValue] = Navire[innerLoopValue][outerLoopValue];
                     }
                 }
             }
@@ -54,11 +54,13 @@ public class Grid {
     }
 
 
-    public void AddTireImpact(int x, int y, boolean flag) {
-        if(flag){
-            grid[x][y]= "|TT";
-        } else if (flag) {
-            grid[x][y]= "|XX";
+    public void AddTireImpact(int x, int y, int type) {
+        if(type == 1){
+            grid[x+separateur][y]= "\033[31m|TT\033[0m";
+        } else if (type == 0){
+            grid[x+separateur][y]= "\033[34m|XX\033[0m";
+        } else {
+            grid[x+separateur][y]= "\033[32m|U1\033[0m";
         }
 
     }

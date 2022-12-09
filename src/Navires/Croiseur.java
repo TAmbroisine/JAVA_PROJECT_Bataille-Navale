@@ -7,7 +7,7 @@ public class Croiseur extends Navire
         y = 0;
         orientation = " ";
         taille = 5;
-        Pv= taille;
+        boatHp = taille;
         pTire=4;
         pattern = "|C";
     }
@@ -18,7 +18,7 @@ public class Croiseur extends Navire
         this.orientation = orientation;
         this.shipnumb = shipnumb;
         taille = 5;
-        Pv= taille;
+        boatHp = taille;
         pTire=4;
         pattern = "|C";
         if(user){

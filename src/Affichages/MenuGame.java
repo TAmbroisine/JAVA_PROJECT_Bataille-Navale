@@ -112,6 +112,7 @@ public class MenuGame
       int x = 0;
       char y;
       ArrayList<Integer> RangeX = new ArrayList<Integer>();
+      // try catch InputMismatch
       for (int i = 0; i < 16;i++){
           RangeX.add(i);
       }
@@ -169,4 +170,8 @@ public class MenuGame
        else if (choice == 2) {return false;}
        return false;
     }
+
+   public void printMoveError(){
+       System.out.println("Déplacement Impossible!!!");
+   }
 }

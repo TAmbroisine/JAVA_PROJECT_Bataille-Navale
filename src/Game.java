@@ -1,4 +1,5 @@
 import Affichages.MenuGame;
+import Navires.Navire;
 import Navires.Sous_Marin;
 
 public class Game {
@@ -20,94 +21,165 @@ public class Game {
         }
     }
     public void IN_GAME(boolean ChoixUser){
-        boolean direction;
         while(ChoixUser){
-
-            int[] playerschoice = menugame.SelectBoat();
-            switch(playerschoice[0]){
-                case 1 :
-                    switch(playerschoice[1]){
-                        case 1 :
-                        if (menugame.ShootOrMove()){
-                            //option 1
-                            direction = menugame.WichDirection(player.navires.Sous_Marin.getOrientation());
-                            if (!player.navires.Sous_Marin.Deplacement(direction)){
-                                //afficher message d'erreur déplacement impossible
-                            }
-                            //option 2
-                            player.navires.Sous_Marin.Deplacement(menugame.WichDirection(player.navires.Sous_Marin.getOrientation()));
-                        }else{
-                            //tire
-                            Object[] coord = menugame.CoordonatesShoots();
-                            player.navires.Sous_Marin.CheckImpact((int)coord[0],(char)coord[1]);
-                        }
-                        case 2 :
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.Sous_Marin1.getOrientation());
-                        }else {
-                            //tire
-                        }
-                        case 3:
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.Sous_Marin2.getOrientation());
-                        }else{
-                            //tire
-                        }
-                        case 4:
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.Sous_Marin3.getOrientation());
-                        }else{
-                            //tire
-                        }
-                    }
-                case 2: switch(playerschoice[1]){
-                    case 1 :
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.destroyer.getOrientation());
-                        }else{
-                            //tire
-                        }
-                    case 2 :
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.destroyer1.getOrientation());
-                        }else {
-                            //tire
-                        }
-                    case 3:
-                        if (menugame.ShootOrMove()){
-                            menugame.WichDirection(player.navires.destroyer2.getOrientation());
-                        }else{
-                            //tire
-                        }
-                }
-                case 3: switch(playerschoice[1]) {
-                    case 1:
-                        if (menugame.ShootOrMove()) {
-                            menugame.WichDirection(player.navires.croiseur.getOrientation());
-                        } else {
-                            //tire
-                        }
-                    case 2:
-                        if (menugame.ShootOrMove()) {
-                            menugame.WichDirection(player.navires.croiseur1.getOrientation());
-                        } else {
-                            //tire
-                        }
-                }
-                case 4:
-                    if (menugame.ShootOrMove()) {
-                        menugame.WichDirection(player.navires.cuirasse.getOrientation());
-                    } else {
-                        //tire
-                    }
-
-
-                    //player.navires.Sous_Marin
-}
-
+            // Move or Shoot according to the player's choice
+            controllerChoice();
+            player.navires.checkAllboatLife();
+            CPU.navires.checkAllboatLife();
 
             //ChoixUser = false;
         }
 
     }
+
+    private int charToInt(char input){
+        int n = 0;
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (c==input){
+                //System.out.println(input+" = "+n);
+                return n;
+            }
+            n++;
+        }
+        return 0;
+    }
+
+    public static void clearConsole() {
+        try {
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                Runtime.getRuntime().exec("cls");
+            } else {
+                Runtime.getRuntime().exec("clear");
+            }
+        } catch (final Exception e) {
+            //  Handle any exceptions.
+        }
+    }
+
+    private void Tire(Navire bato){
+        Object[] coord = menugame.CoordonatesShoots();
+        /*
+         * charToInt(coord[1].toString().charAt(0))
+         *   --> Convert Object containing a char to char
+         *       --> then convert that char to its int equivalent
+         */
+        bato.CheckImpact((int)coord[0],charToInt(coord[1].toString().charAt(0)));
+        clearConsole();
+        player.navires.PrintGrid();
+    }
+
+    private void Move(Navire bato){
+        boolean direction;
+        direction = menugame.WichDirection(bato.getOrientation());
+        if (!bato.Deplacement(direction)){
+            //afficher message d'erreur déplacement impossible
+            menugame.printMoveError();
+        }
+        clearConsole();
+        player.navires.PrintGrid();
+    }
+
+    private void controllerChoice(){
+        boolean direction;
+        int[] playerschoice = menugame.SelectBoat();
+        switch(playerschoice[0]){
+            case 1 :
+                switch(playerschoice[1]){
+                    case 1 :
+                        if (menugame.ShootOrMove()){
+                            //option 1
+                            Move(player.navires.Sous_Marin);
+                        }else{
+                            //tire
+                            Tire(player.navires.Sous_Marin);
+                        }
+                        break;
+                    case 2 :
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.Sous_Marin1);
+                        }else {
+                            //tire
+                            Tire(player.navires.Sous_Marin1);
+                        }
+                        break;
+                    case 3:
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.Sous_Marin2);
+                        }else{
+                            //tire
+                            Tire(player.navires.Sous_Marin2);
+                        }
+                        break;
+                    case 4:
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.Sous_Marin3);
+                        }else{
+                            //tire
+                            Tire(player.navires.Sous_Marin3);
+                        }
+                        break;
+                }
+                break;
+            case 2:
+                switch(playerschoice[1]){
+                    case 1 :
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.destroyer);
+                        }else{
+                            //tire
+                            Tire(player.navires.destroyer);
+                        }
+                        break;
+                    case 2 :
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.destroyer1);
+                        }else {
+                            //tire
+                            Tire(player.navires.destroyer1);
+                        }
+                        break;
+                    case 3:
+                        if (menugame.ShootOrMove()){
+                            Move(player.navires.destroyer2);
+                        }else{
+                            //tire
+                            Tire(player.navires.destroyer2);
+                        }
+                        break;
+                }
+                break;
+            case 3:
+                switch(playerschoice[1]) {
+                    case 1:
+                        if (menugame.ShootOrMove()) {
+                            Move(player.navires.croiseur);
+                        } else {
+                            //tire
+                            Tire(player.navires.croiseur);
+                        }
+                        break;
+                    case 2:
+                        if (menugame.ShootOrMove()) {
+                            Move(player.navires.croiseur1);
+                        } else {
+                            //tire
+                            Tire(player.navires.croiseur1);
+                        }
+                        break;
+                }
+                break;
+            case 4:
+                if (menugame.ShootOrMove()) {
+                    Move(player.navires.cuirasse);
+                } else {
+                    //tire
+                    Tire(player.navires.cuirasse);
+                }
+                break;
+        }
+    }
+
+
 }

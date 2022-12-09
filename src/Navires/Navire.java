@@ -1,7 +1,6 @@
 package Navires;
 
 import Global.Model;
-import Grid.Grid;
 
 
 import java.util.Objects;
@@ -11,8 +10,11 @@ public class Navire implements Model {
 
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
-    int x,y,taille,pTire,Pv,shipnumb;
-    boolean direction;
+
+    int xMax = Grid.getX()/2;
+    int yMax = Grid.getY();
+    int x,y,taille,pTire, boatHp,shipnumb;
+    boolean direction, IsDMG;
     public String orientation;
     String pattern;
     String[][] bateau,tireB;
@@ -30,8 +32,7 @@ public class Navire implements Model {
         pattern = "";
         bateau = new String[Grid.x/2][Grid.y];
         tireB = new String[Grid.x/2][Grid.y];
-
-
+        IsDMG = false;
     }
 
     /**
@@ -39,9 +40,13 @@ public class Navire implements Model {
      * @return
      */
     public boolean Deplacement(boolean direction){
-        this.direction = direction;
-        IncrementCoord();
-        return AddMoveToGrid();
+        if (!IsDMG) {
+            this.direction = direction;
+            IncrementCoord();
+            return AddMoveToGrid();
+        }else {
+            return false;
+        }
     }
 
     /**
@@ -50,7 +55,7 @@ public class Navire implements Model {
      */
     private boolean AddMoveToGrid(){
         if (Objects.equals(orientation, "vertical")) {
-            if (x <= 0 | (x+taille) > Grid.x/2){
+            if (x <= 0 & (x+taille) < xMax){
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
                     return false;
@@ -58,7 +63,7 @@ public class Navire implements Model {
             }
         }
         if (Objects.equals(orientation, "horizontal")) {
-            if (y <= 0 | (y+taille) > Grid.y){
+            if (y <= 0 & (y+taille) < yMax){
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
                     return false;
@@ -72,6 +77,8 @@ public class Navire implements Model {
 
     public boolean positionnement(boolean init) {
         if (CheckSpace(orientation,y,x,taille)) {
+            // Debug
+            System.out.println("CheckSpace successful");
             //bateau[x][y] = "|0" + shipnumb;
             if (Objects.equals(orientation, "vertical")) {
                 for (int i = y; i < (y + taille); i++) {
@@ -93,6 +100,8 @@ public class Navire implements Model {
             y = coord[1];
             positionnement(true);
         }
+        //Debug
+        System.out.println("CheckSpace failed");
         return false;
     }
 
@@ -256,16 +265,24 @@ public class Navire implements Model {
     private void IncrementCoord(){
         if (Objects.equals(orientation, "vertical")) {
             if (direction){
+                //debug
+                System.out.println("y = "+y+" --> y = "+(y-1));
                 y-=1;
             }else {
+                //debug
+                System.out.println("y = "+y+" --> y = "+(y+1));
                 y+=1;
             }
 
         }
         if (Objects.equals(orientation, "horizontal")) {
             if (direction){
+                //debug
+                System.out.println("x = "+x+" --> x = "+(x-1));
                 x-=1;
             }else {
+                //debug
+                System.out.println("x = "+x+" --> x = "+(x+1));
                 x+=1;
             }
         }
@@ -290,34 +307,48 @@ public class Navire implements Model {
 
     public boolean CheckImpact( int x,int y) {
 
-        for (int i = y; i < (y + pTire); i++) {
-            for(int j=x;j<(x+pTire);j++){
-                tireB[i][j] = "|XX";
-            }
-        }
+        int xtir;
+        int ytir;
+
+        System.out.println();
         //initialize grid
-        for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
+        if (y+pTire > yMax){
+            ytir = yMax;
+        } else{
+            ytir = y+pTire;
+        }
+        if (x+pTire > xMax){
+            xtir = xMax;
+        } else{
+            xtir = x+pTire;
+        }
+
+        for(int outerLoopValue = y; outerLoopValue<ytir;outerLoopValue++)
         {
             // grille USER
-            for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
+            for(int innerLoopValue = x; innerLoopValue<xtir;innerLoopValue++)
             {
-                if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
+                if (IsBoat(innerLoopValue,outerLoopValue)){
                     //Add impact on boat
-                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,true);
-                }else if (IsRocket(outerLoopValue,innerLoopValue)){
+                    System.out.println("Impact Confirmed");
+                    if (Objects.equals(GridCPU.grid[innerLoopValue][outerLoopValue], "|U1") & !IsCuirasseAlreadyDMG(innerLoopValue,outerLoopValue)){
+                        Grid.AddTireImpact(innerLoopValue,outerLoopValue,2);
+                    } else{
+                        Grid.AddTireImpact(innerLoopValue,outerLoopValue,1);
+                    }
+                }else {
                     //Add impact in water
-                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,false);
+                    Grid.AddTireImpact(innerLoopValue,outerLoopValue,0);
                 }
-
             }
         }
         //Plateau.TireBoat(tireB);
         return false;
     }
-    public boolean CheckImpactCPU( int x,int y) {
+    /*public boolean CheckImpactCPU( int x,int y) {
 
-        for (int i = y; i < (y + pTire); i++) {
-            for(int j=x;j<(x+pTire);j++){
+        for (int i = x; i < (x + pTire); i++) {
+            for(int j=y;j<(y+pTire);j++){
                 tireB[i][j] = "|XX";
             }
         }
@@ -339,17 +370,52 @@ public class Navire implements Model {
         }
         //Plateau.TireBoat(tireB);
         return false;
+    }*/
+
+    private boolean IsCuirasseAlreadyDMG(int x,int y){
+        return Objects.equals(Grid.grid[x + 17][y], "\033[32m|U1\033[0m");
     }
 
     private boolean IsBoat(int x,int y){
-        return Objects.equals(GridCPU.grid[x][y], "|##");
+        /*
+        System.out.println("Checking impact");
+        System.out.println("GridCPU["+x+"]["+y+"]= "+GridCPU.grid[x][y]);
+        */
+        return !Objects.equals(GridCPU.grid[x][y], "|__");
     }
 
     private boolean IsRocket(int x,int y){
         return Objects.equals(tireB[x][y], "|XX");
     }
 
-    private void PrintGrid(){
+
+    public void checkAllboatLife(){
+        Sous_Marin.checkBoatLife();
+        Sous_Marin2.checkBoatLife();
+        Sous_Marin2.checkBoatLife();
+        Sous_Marin3.checkBoatLife();
+        destroyer.checkBoatLife();
+        destroyer1.checkBoatLife();
+        destroyer2.checkBoatLife();
+        croiseur.checkBoatLife();
+        croiseur1.checkBoatLife();
+        cuirasse.checkBoatLife();
+    }
+    protected void checkBoatLife(){
+        String[][] grid = Grid.getGrid();
+        int count = 0;
+        for (int x=0; x < xMax;x++){
+            for (int y=0; y < yMax;y++){
+                if (Objects.equals(grid[x][y], pattern)){
+                    count++;
+                }
+            }
+        }
+        IsDMG =  (count == boatHp);
+    }
+
+
+    public void PrintGrid(){
         Screen.Nom_Grille(Grid.getX());
         Screen.PrintHeader(Grid.getX());
         Screen.PrintGrid(Grid.getGrid(), Grid.getX(), Grid.getY());

@@ -26,24 +26,6 @@ public class Affichage {
     }
 
     //View
-    /*public void PrintGridCPU(String[][] gridCPU, int x,int y) {
-        char ch = 'a';
-        Nom_Grille();
-        PrintHeader();
-        for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
-        {
-            System.out.println();
-            System.out.print(ch);
-            ch++;
-            for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
-            {
-                System.out.print(gridCPU[innerLoopValue][outerLoopValue]);
-            }
-            System.out.print("|");
-        }
-    }*/
-
-    //View
     public void PrintHeader(int x){
         int n = 0;
         boolean reset = true;

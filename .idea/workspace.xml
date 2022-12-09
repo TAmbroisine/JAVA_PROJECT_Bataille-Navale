@@ -6,30 +6,20 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Update Tyron">
-      <change afterPath="$PROJECT_DIR$/src/Deepdemort.java" afterDir="false" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="update tyron">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichages/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Affichage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navires/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Croiseur.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navires/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navires/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
     </list>
-    <list id="3934c4ae-c023-4d79-afa3-93ca90e77c6e" name="Changes by bavan" comment="Changes by bavan">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
-    </list>
-    <list id="613c4e8a-860e-49d8-bfcf-ae2ed529cdd3" name="Changes by theworm" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
-    </list>
-    <list id="352c25df-de47-4056-a7e9-8aeda8e1a95c" name="Changes by yanni" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
-    </list>
+    <list id="3934c4ae-c023-4d79-afa3-93ca90e77c6e" name="Changes by bavan" comment="Changes by bavan" />
+    <list id="352c25df-de47-4056-a7e9-8aeda8e1a95c" name="Changes by yanni" comment="Changes by yanni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,52 +40,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Navires/Sous_Marin.java">
-      <ranges>
-        <range start1="12" end1="13" start2="12" end2="13" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="23" end1="25" start2="23" end2="24" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Navire.java">
-      <ranges>
-        <range start1="3" end1="3" start2="3" end2="5" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="27" end1="28" start2="29" end2="29" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="29" end1="29" start2="30" end2="33" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="70" end1="71" start2="74" end2="75" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="72" end1="74" start2="76" end2="78" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="77" end1="79" start2="81" end2="83" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="95" end1="97" start2="99" end2="101" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="98" end1="100" start2="102" end2="104" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="103" end1="105" start2="107" end2="109" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="137" end1="137" start2="141" end2="158" changelist="613c4e8a-860e-49d8-bfcf-ae2ed529cdd3" />
-        <range start1="140" end1="140" start2="161" end2="162" changelist="613c4e8a-860e-49d8-bfcf-ae2ed529cdd3" />
-        <range start1="282" end1="282" start2="304" end2="305" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="283" end1="284" start2="306" end2="308" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="315" end1="315" start2="339" end2="340" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Destroyer.java">
-      <ranges>
-        <range start1="2" end1="2" start2="2" end2="4" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="12" end1="13" start2="14" end2="15" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="23" end1="25" start2="25" end2="26" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Navires/Cuirasse.java">
-      <ranges>
-        <range start1="11" end1="12" start2="11" end2="12" changelist="3934c4ae-c023-4d79-afa3-93ca90e77c6e" />
-        <range start1="21" end1="23" start2="21" end2="22" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/Affichages/MenuGame.java">
-      <ranges>
-        <range start1="2" end1="6" start2="2" end2="3" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
-        <range start1="103" end1="104" start2="100" end2="100" changelist="352c25df-de47-4056-a7e9-8aeda8e1a95c" />
-        <range start1="113" end1="113" start2="109" end2="140" changelist="352c25df-de47-4056-a7e9-8aeda8e1a95c" />
-      </ranges>
-    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -146,6 +90,9 @@
       <workItem from="1669714916953" duration="7703000" />
       <workItem from="1669813056384" duration="6968000" />
       <workItem from="1670249744517" duration="8096000" />
+      <workItem from="1670340591899" duration="42000" />
+      <workItem from="1670503672844" duration="8036000" />
+      <workItem from="1670570458151" duration="5476000" />
     </task>
     <task id="LOCAL-00001" summary="position bateau">
       <created>1669294905928</created>
@@ -203,7 +150,35 @@
       <option name="project" value="LOCAL" />
       <updated>1670249778030</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="update tyron">
+      <created>1670319070023</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670319070023</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes by bavan">
+      <created>1670319081670</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670319081670</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Changes by theworm">
+      <created>1670319091210</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670319091210</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Changes by yanni">
+      <created>1670319106914</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670319106914</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,11 +200,29 @@
     <MESSAGE value="All boats on one grid" />
     <MESSAGE value="suite déplacements" />
     <MESSAGE value="delete print gride for croiseur" />
-    <MESSAGE value="Changes by bavan" />
     <MESSAGE value="Work for 29/11/2022" />
-    <MESSAGE value="Debut Work for 30/11/2022" />
     <MESSAGE value="Update Tyron" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Tyron" />
+    <MESSAGE value="Debut Work for 30/11/2022" />
+    <MESSAGE value="update tyron" />
+    <MESSAGE value="Changes by bavan" />
+    <MESSAGE value="Changes by theworm" />
+    <MESSAGE value="Changes by yanni" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by yanni" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="7" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="((Navires.Sous_Marin)this).tireB[6]" custom="Navires.Sous_Marin" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
