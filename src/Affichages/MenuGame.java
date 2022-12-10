@@ -17,7 +17,7 @@ public class MenuGame
        int[] playerschoice = new int[2];
        int value = 3;
        boolean check = false;
-       System.out.println("CHOISIR UN BATEAU POUR SE DEPLACER: \n" +
+       System.out.println("CHOISIR UN TYPE DE BATEAU : \n" +
                "\t[1] : SOUS MARINS\n" +
                "\t[2] : DESTROYER\n" +
                "\t[3] : CROISEUR\n" +

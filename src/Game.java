@@ -66,8 +66,8 @@ public class Game {
          *   --> Convert Object containing a char to char
          *       --> then convert that char to its int equivalent
          */
+        ResetConsole.FullClear();
         bato.CheckImpact((int)coord[0],charToInt(coord[1].toString().charAt(0)));
-        clearConsole();
         player.navires.PrintGrid();
     }
 
