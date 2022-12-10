@@ -5,6 +5,7 @@ import Grid.Grid;
 
 
 import javax.security.auth.login.AccountLockedException;
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
@@ -60,12 +61,10 @@ public class Navire implements Model {
      */
     private boolean AddMoveToGrid(){
         if (Objects.equals(orientation, "vertical")) {
-            //debug
+            /*//debug
             System.out.println("y = "+y+"/ y + taille = "+(y+taille)+"/ yMax = "+yMax);
-            System.out.println((y >= 0 & (y+taille) < yMax));
+            System.out.println((y >= 0 & (y+taille) < yMax));*/
             if (y >= 0 & (y+taille) <= yMax){
-                //debug
-                System.out.println("Start positionnement");
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
                     return false;
@@ -73,9 +72,9 @@ public class Navire implements Model {
             }
         }
         if (Objects.equals(orientation, "horizontal")) {
-            //debug
+            /*//debug
             System.out.println("x = "+x+"/ x + taille = "+(x+taille)+"/ xMax = "+xMax);
-            System.out.println((x >= 0 & (x+taille) < xMax));
+            System.out.println((x >= 0 & (x+taille) < xMax));*/
             if (x >= 0 & (x+taille) <= xMax){
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
@@ -91,11 +90,10 @@ public class Navire implements Model {
     public boolean positionnement(boolean init) {
 
         if (CheckSpace(orientation,y,x,taille)) {
-            // Debug
-            System.out.println("CheckSpace successful");
             if (Objects.equals(orientation, "vertical")) {
                 for (int i = y; i < (y + taille); i++) {
                     bateau[x][i] = pattern;
+
                 }
             }
             if (Objects.equals(orientation, "horizontal")) {
@@ -107,6 +105,7 @@ public class Navire implements Model {
             if (!init){
                 clearBoat();
             }
+            clearBateau();
             return true;
         }
         else if (init){
@@ -116,8 +115,6 @@ public class Navire implements Model {
             y = coord[1];
             positionnement(true);
         }
-        //Debug
-        System.out.println("CheckSpace failed");
         return false;
     }
 
@@ -138,6 +135,7 @@ public class Navire implements Model {
             if (!init){
                 clearBoat();
             }
+            clearBateau();
             return true;
         }
         else if (init){
@@ -153,12 +151,12 @@ public class Navire implements Model {
     private boolean CheckSpace(String orientation, int y, int x, int taille){
         if (Objects.equals(orientation, "vertical")) {
             for (int i = y; i < (y + taille); i++) {
-                //debug
+                /*//debug
                 System.out.println("Grid.grid[x]["+i+"] = " + Grid.grid[x][i]);
                 System.out.println("pattern = " + pattern);
                 System.out.println("(!Objects.equals(Grid.grid[x][i], '|__') = "+(!Objects.equals(Grid.grid[x][i], "|__")));
                 System.out.println("(!Objects.equals(Grid.grid[x][i], pattern)) = "+(!Objects.equals(Grid.grid[x][i], pattern)));
-                System.out.println((!Objects.equals(Grid.grid[x][i], "|__") & (!Objects.equals(Grid.grid[x][i], pattern))));
+                System.out.println((!Objects.equals(Grid.grid[x][i], "|__") & (!Objects.equals(Grid.grid[x][i], pattern))));*/
                 if (!Objects.equals(Grid.grid[x][i], "|__") & (!Objects.equals(Grid.grid[x][i], pattern))){
                     return false;
                 }
@@ -166,11 +164,11 @@ public class Navire implements Model {
         }
         else if (Objects.equals(orientation, "horizontal")) {
             for (int i = x; i < (x + taille); i++) {
-                //debug
+                /*//debug
                 System.out.println("Grid.grid["+i+"][y] = " + Grid.grid[i][x]);
                 System.out.println("(!Objects.equals(Grid.grid[i][y], '|__') = "+(!Objects.equals(Grid.grid[i][y], "|__")));
                 System.out.println("(!Objects.equals(Grid.grid[i][y], pattern)) = "+(!Objects.equals(Grid.grid[i][y], pattern)));
-                System.out.println((!Objects.equals(Grid.grid[i][y], "|__") & (!Objects.equals(Grid.grid[i][y], pattern))));
+                System.out.println((!Objects.equals(Grid.grid[i][y], "|__") & (!Objects.equals(Grid.grid[i][y], pattern))));*/
                 if (!Objects.equals(Grid.grid[i][y], "|__") & (!Objects.equals(Grid.grid[i][y], pattern))){
                     return false;
                 }
@@ -296,24 +294,24 @@ public class Navire implements Model {
     private void IncrementCoord(){
         if (Objects.equals(orientation, "vertical")) {
             if (direction){
-                //debug
-                System.out.println("y = "+y+" --> y = "+(y-1));
+                /*//debug
+                System.out.println("y = "+y+" --> y = "+(y-1));*/
                 y-=1;
             }else {
-                //debug
-                System.out.println("y = "+y+" --> y = "+(y+1));
+                /*//debug
+                System.out.println("y = "+y+" --> y = "+(y+1));*/
                 y+=1;
             }
 
         }
         if (Objects.equals(orientation, "horizontal")) {
             if (direction){
-                //debug
-                System.out.println("x = "+x+" --> x = "+(x+1));
+                /*//debug
+                System.out.println("x = "+x+" --> x = "+(x+1));*/
                 x+=1;
             }else {
-                //debug
-                System.out.println("x = "+x+" --> x = "+(x-1));
+                /*//debug
+                System.out.println("x = "+x+" --> x = "+(x-1));*/
                 x-=1;
             }
         }
@@ -448,33 +446,40 @@ public class Navire implements Model {
     private void clearBoat(){
         System.out.println("orientation = "+orientation);
         System.out.println("direction = "+direction);
-        if (Objects.equals(orientation, "horizontale")){
+        if (Objects.equals(orientation, "horizontal")){
             if (direction){
-                //debug
+                /*//debug
                 System.out.println("x = "+x);
                 System.out.println("y = "+y);
-                System.out.println("Grid.grid["+(x-1)+"]["+y+"] = '|__'");
-                Grid.grid[x-1][y] = "\033[36m|__\033[0m";
+                System.out.println("Grid.grid["+(x-1)+"]["+y+"] = '|__'");*/
+                Grid.grid[x-1][y] = "|__";
             }
             else {
-                System.out.println("x = "+x);
+                /*System.out.println("x = "+x);
                 System.out.println("y = "+y);
-                Grid.grid[x+taille][y] = "\033[36m|__\033[0m";
-                System.out.println("Grid.grid["+(tempx+taille)+"]["+y+"] = '|__'");
+                System.out.println("Grid.grid["+(tempx+taille)+"]["+y+"] = '|__'");*/
+                Grid.grid[x+taille][y] = "|__";
+
             }
         } else {
             if (direction){
-                System.out.println("x = "+x);
+                /*System.out.println("x = "+x);
                 System.out.println("y = "+y);
-                Grid.grid[x][tempy+taille] = "\033[36m|__\033[0m";
-                System.out.println("Grid.grid["+x+"]["+(tempy+taille-1)+"] = '|__'");
+                System.out.println("Grid.grid["+x+"]["+(tempy+taille-1)+"] = '|__'");*/
+                Grid.grid[x][tempy+taille-1] = "|__";
             }
             else {
-                System.out.println("x = "+x);
+                /*System.out.println("x = "+x);
                 System.out.println("y = "+y);
-                Grid.grid[x][tempy] = "\033[36m|__\033[0m";
-                System.out.println("Grid.grid["+x+"]["+tempy+"] = '|__'");
+                System.out.println("Grid.grid["+x+"]["+tempy+"] = '|__'");*/
+                Grid.grid[x][tempy] = "|__";
             }
+        }
+    }
+
+    private void clearBateau(){
+        for (int x = 0; x < bateau.length;x++){
+            Arrays.fill(bateau[x], "|__");
         }
     }
 
