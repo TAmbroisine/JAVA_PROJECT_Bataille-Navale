@@ -21,7 +21,7 @@ public class Destroyer extends Navire
         taille = 3;
         boatHp =taille;
         pTire=1;
-        pattern = "|D";
+        pattern = "|D"+shipnumb;
         if(user){
             super.positionnement(true);
         }else {

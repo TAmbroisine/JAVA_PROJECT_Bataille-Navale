@@ -19,7 +19,7 @@ public class Cuirasse extends Navire
         this.shipnumb = shipnumb;
         taille = 7;
         pTire=9;
-        pattern = "|U";
+        pattern = "|U"+shipnumb;
         if (user) {
             super.positionnement(true);
         }

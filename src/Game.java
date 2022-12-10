@@ -1,4 +1,5 @@
 import Affichages.MenuGame;
+import Affichages.ResetConsole;
 import Navires.Navire;
 import Navires.Sous_Marin;
 
@@ -24,7 +25,7 @@ public class Game {
         while(ChoixUser){
             // Move or Shoot according to the player's choice
             controllerChoice();
-            player.navires.checkAllboatLife();
+            //player.navires.checkAllboatLife();
             CPU.navires.checkAllboatLife();
 
             //ChoixUser = false;
@@ -77,7 +78,7 @@ public class Game {
             //afficher message d'erreur déplacement impossible
             menugame.printMoveError();
         }
-        clearConsole();
+        ResetConsole.FullClear();
         player.navires.PrintGrid();
     }
 

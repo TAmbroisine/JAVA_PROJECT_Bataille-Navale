@@ -22,7 +22,7 @@ public class Sous_Marin extends Navire
         boatHp =taille;
         //By default, pTire = 1
         pTire=1;
-        pattern = "|S";
+        pattern = "|S"+shipnumb;
         if(user){
             super.positionnement(true);
         }else {

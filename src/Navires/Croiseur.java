@@ -20,7 +20,7 @@ public class Croiseur extends Navire
         taille = 5;
         boatHp = taille;
         pTire=4;
-        pattern = "|C";
+        pattern = "|C"+shipnumb;
         if(user){
             positionnement(true);
         }else {
