@@ -27,20 +27,16 @@
 
 ## Progrès Global
 
-| Etape  | Progrès  |
-|--------|----------|
-| 1      | Fait     |
-| 2      | A tester |
-| 3      | A tester |
-| 4      | A faire  |
-| ------ | ------   |
-| Fait   | 73 %     |
+| Etape  | Progrès |
+|--------|---------|
+| 1      | Fait    |
+| 2      | Fait    |
+| 3      | Fait    |
+| 4      | Bonus   |
+| ------ | ------  |
+| Fait   | 95 %    |
 
 
 ## Plan d'action
 
-- Finir la classe MenuGame (déplacement/tir)
-- Finir CheckImpact et CheckImpactCPU
-- tester les fonctions
-- Gestion des dégats (diminution des hp, ...)
 - faire IA
