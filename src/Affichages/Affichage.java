@@ -6,8 +6,16 @@ package Affichages;
 
 public class Affichage {
 
+    /**
+     * constructeur affichage
+     */
     public Affichage(){}
 
+    /**
+     * @param grid
+     * @param x
+     * @param y
+     */
     //View
     public void PrintGrid(String[][] grid, int x,int y) {
         char ch = 'a';
@@ -25,6 +33,9 @@ public class Affichage {
         System.out.println();
     }
 
+    /**
+     * @param x
+     */
     //View
     public void PrintHeader(int x){
         int n = 0;
@@ -49,14 +60,20 @@ public class Affichage {
         }
         System.out.print("|");
     }
+
+    /**
+     * @param x
+     */
      //View
      public void Nom_Grille(int x){
+
          System.out.println();
+
          for(int i = 0; i < (x/4)-2; i++){
              System.out.print("   ");
          }
          System.out.print("Grille du joueur");
-         for(int i = 0; i < (x/4)+3-5; i++) { // +4 pour prendre en compte l'espacement
+         for(int i = 0; i < (x/4)+3-5; i++) { // prends en compte la séparation
              System.out.print("   ");
          }
          //System.out.print("a");

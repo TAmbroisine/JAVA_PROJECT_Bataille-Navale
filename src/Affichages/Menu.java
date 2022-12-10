@@ -10,10 +10,19 @@ public class Menu extends Affichage
 {
     static Scanner userReader;
 
+    /**
+     * création du menu
+     */
     public Menu()
     {
         userReader = new Scanner(System.in);
     }
+
+    /**
+     * Retourne à chaque cas du switch case si on veut commencer une nouvelle partie, si on veut chargé une partie,
+     * si on veut avoir les aides et les commandes ou si on veut quitter
+     * @return le choix de l'utilisateur et si une partie se lance
+     */
     public Boolean print()
     {
         int choix1, choix2;
@@ -79,6 +88,10 @@ public class Menu extends Affichage
         }while (check);
         return(boolean_error);
     }
+
+    /**
+     * Page d'aide
+     */
     private static void PrintRegle()
     {
         System.out.println("--------------------------------------------------------------------");
@@ -104,6 +117,9 @@ public class Menu extends Affichage
                 "");
     }
 
+    /**
+     * Page d'accueil
+     */
     private static void PrintMenu()
     {
 
