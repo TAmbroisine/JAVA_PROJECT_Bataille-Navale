@@ -1,10 +1,8 @@
 package Navires;
 
 import Global.Model;
-import Grid.Grid;
 
 
-import javax.security.auth.login.AccountLockedException;
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
@@ -201,11 +199,7 @@ public class Navire implements Model {
         GenerateDestroyer(user);
         GenerateCuirrasse(user);
         GenerateSous_Marin(user);
-        if(user){
-            PrintGrid();
-        }else {
-            PrintGridCPU();
-        }
+        PrintGrid(user);
 
     }
 
@@ -334,75 +328,87 @@ public class Navire implements Model {
         }
     }
 
-    public boolean CheckImpact( int x,int y) {
+    public void CheckImpact(int x, int y,boolean user) {
 
-        int xtir;
-        int ytir;
-
-        System.out.println();
-        //initialize grid
-        if (y+pTire > yMax){
-            ytir = yMax;
-        } else{
-            ytir = y+pTire;
-        }
-        if (x+pTire > xMax){
-            xtir = xMax;
-        } else{
-            xtir = x+pTire;
-        }
-
-        for(int outerLoopValue = y; outerLoopValue<ytir;outerLoopValue++)
-        {
-            // grille USER
-            for(int innerLoopValue = x; innerLoopValue<xtir;innerLoopValue++)
-            {
-                if (IsBoat(innerLoopValue,outerLoopValue)){
-                    //Add impact on boat
-                    System.out.println("Impact Confirmed");
-                    if (Objects.equals(GridCPU.grid[innerLoopValue][outerLoopValue], "|U1") & !IsCuirasseAlreadyDMG(innerLoopValue,outerLoopValue)){
-                        Grid.AddTireImpact(innerLoopValue,outerLoopValue,2);
-                    } else{
-                        Grid.AddTireImpact(innerLoopValue,outerLoopValue,1);
+        switch (pTire){
+            case 1:
+                if (user) {
+                    subCheckImpact(y, x);
+                }else{
+                    subCheckImpactCPU(y,x);
+                }
+                break;
+            case 4:
+                for (int i = x-1; i < x+2; i++){
+                    if (i <= xMax) {
+                        if (user) {
+                            subCheckImpact(y, i);
+                        }else{
+                            subCheckImpactCPU(y,i);
+                        }
                     }
-                }else {
-                    //Add impact in water
-                    Grid.AddTireImpact(innerLoopValue,outerLoopValue,0);
                 }
-            }
+                for (int i = y-1; i < y+2; i++){
+                    if (i!=y & i <= yMax){
+                        if (user) {
+                            subCheckImpact(i, x);
+                        }else{
+                            subCheckImpactCPU(i,x);
+                        }
+                    }
+                }
+                break;
+            case 9:
+                for (int i = x-1; i < x+2; i++){
+                    for (int j = y-1; j < y+2; j++){
+                        if (i <= xMax & j <= yMax) {
+                            if (user) {
+                                subCheckImpact(j, i);
+                            }else{
+                                subCheckImpactCPU(j,i);
+                            }
+                        }
+                    }
+                }
+                break;
         }
-        //Plateau.TireBoat(tireB);
-        return false;
     }
-    /*public boolean CheckImpactCPU( int x,int y) {
 
-        for (int i = x; i < (x + pTire); i++) {
-            for(int j=y;j<(y+pTire);j++){
-                tireB[i][j] = "|XX";
+    private void subCheckImpact(int y, int x) {
+        if (IsBoat(x,y)){
+            //Add impact on boat
+            System.out.println("Impact Confirmed");
+            if (Objects.equals(GridCPU.grid[x][y], "|U1") & !IsCuirasseAlreadyDMG(x,y)){
+                Grid.AddTireImpactOnMonitor(x,y,2);
+                GridCPU.AddTireImpactOnPlayerGrid(x,y,2);
+            } else{
+                Grid.AddTireImpactOnMonitor(x,y,1);
+                GridCPU.AddTireImpactOnPlayerGrid(x,y,1);
             }
+        }else {
+            //Add impact in water
+            Grid.AddTireImpactOnMonitor(x,y,0);
         }
-        //initialize grid
-        for(int outerLoopValue = 0; outerLoopValue<y;outerLoopValue++)
-        {
-            // grille USER
-            for(int innerLoopValue = 0; innerLoopValue<(x/2);innerLoopValue++)
-            {
-                if (IsBoat(outerLoopValue,innerLoopValue) & IsRocket(outerLoopValue,innerLoopValue)){
-                    //Add impact on boat
-                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,true);
-                }else if (IsRocket(outerLoopValue,innerLoopValue)){
-                    //Add impact in water
-                    Grid.AddTireImpact(outerLoopValue,innerLoopValue,false);
-                }
-
+    }
+    private void subCheckImpactCPU(int y, int x) {
+        if (IsBoat(x,y)){
+            //Add impact on boat
+            System.out.println("Impact Confirmed");
+            if (Objects.equals(Grid.grid[x][y], "|U1") & !IsCuirasseAlreadyDMG(x,y)){
+                GridCPU.AddTireImpactOnMonitor(x,y,2);
+                Grid.AddTireImpactOnPlayerGrid(x,y,2);
+            } else{
+                GridCPU.AddTireImpactOnMonitor(x,y,1);
+                Grid.AddTireImpactOnPlayerGrid(x,y,1);
             }
+        }else {
+            //Add impact in water
+            GridCPU.AddTireImpactOnMonitor(x,y,0);
         }
-        //Plateau.TireBoat(tireB);
-        return false;
-    }*/
+    }
 
     private boolean IsCuirasseAlreadyDMG(int x,int y){
-        return Objects.equals(Grid.grid[x + 17][y], "\033[32m|U1\033[0m");
+        return (Objects.equals(Grid.grid[x + 17][y], "\033[32m|U1\033[0m")|Objects.equals(Grid.grid[x + 17][y], "\033[31m|TT\033[0m"));
     }
 
     private boolean IsBoat(int x,int y){
@@ -420,7 +426,7 @@ public class Navire implements Model {
 
     public void checkAllboatLife(){
         Sous_Marin.checkBoatLife();
-        Sous_Marin2.checkBoatLife();
+        Sous_Marin1.checkBoatLife();
         Sous_Marin2.checkBoatLife();
         Sous_Marin3.checkBoatLife();
         destroyer.checkBoatLife();
@@ -435,12 +441,14 @@ public class Navire implements Model {
         int count = 0;
         for (int x=0; x < xMax;x++){
             for (int y=0; y < yMax;y++){
+                //System.out.println("grid["+x+"]["+y+"] = " + grid[x][y]);
                 if (Objects.equals(grid[x][y], pattern)){
                     count++;
+                    //System.out.println("Count = "+count);
                 }
             }
         }
-        IsDMG =  (count == boatHp);
+        IsDMG =  (count != boatHp);
     }
 
     private void clearBoat(){
@@ -483,15 +491,16 @@ public class Navire implements Model {
         }
     }
 
-    public void PrintGrid(){
-        Screen.Nom_Grille(Grid.getX());
-        Screen.PrintHeader(Grid.getX());
-        Screen.PrintGrid(Grid.getGrid(), Grid.getX(), Grid.getY());
-    }
-    private void PrintGridCPU(){
-        Screen.Nom_Grille(GridCPU.getX());
-        Screen.PrintHeader(GridCPU.getX());
-        Screen.PrintGrid(GridCPU.getGrid(), GridCPU.getX(), GridCPU.getY());
+    public void PrintGrid(boolean  player){
+        if (player) {
+            Screen.Nom_Grille(Grid.getX());
+            Screen.PrintHeader(Grid.getX());
+            Screen.PrintGrid(Grid.getGrid(), Grid.getX(), Grid.getY());
+        } else {
+            Screen.Nom_Grille(GridCPU.getX());
+            Screen.PrintHeader(GridCPU.getX());
+            Screen.PrintGrid(GridCPU.getGrid(), GridCPU.getX(), GridCPU.getY());
+        }
     }
 
     public String getOrientation() {

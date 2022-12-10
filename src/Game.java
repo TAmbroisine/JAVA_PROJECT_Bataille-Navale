@@ -25,7 +25,7 @@ public class Game {
         while(ChoixUser){
             // Move or Shoot according to the player's choice
             controllerChoice();
-            //player.navires.checkAllboatLife();
+            player.navires.checkAllboatLife();
             CPU.navires.checkAllboatLife();
 
             //ChoixUser = false;
@@ -67,8 +67,11 @@ public class Game {
          *       --> then convert that char to its int equivalent
          */
         ResetConsole.FullClear();
-        bato.CheckImpact((int)coord[0],charToInt(coord[1].toString().charAt(0)));
-        player.navires.PrintGrid();
+        int x = (int)coord[0];
+        int y = charToInt(coord[1].toString().charAt(0));
+        bato.CheckImpact(x,y,true);
+        player.navires.PrintGrid(true);
+        CPU.navires.PrintGrid(false);
     }
 
     private void Move(Navire bato){
@@ -79,7 +82,7 @@ public class Game {
             menugame.printMoveError();
         }
         ResetConsole.FullClear();
-        player.navires.PrintGrid();
+        player.navires.PrintGrid(true);
     }
 
     private void controllerChoice(){

@@ -54,13 +54,23 @@ public class Grid {
     }
 
 
-    public void AddTireImpact(int x, int y, int type) {
+    public void AddTireImpactOnMonitor(int x, int y, int type) {
         if(type == 1){
             grid[x+separateur][y]= "\033[31m|TT\033[0m";
         } else if (type == 0){
             grid[x+separateur][y]= "\033[34m|XX\033[0m";
         } else {
             grid[x+separateur][y]= "\033[32m|U1\033[0m";
+        }
+
+    }
+    public void AddTireImpactOnPlayerGrid(int x, int y, int type) {
+        if(type == 1){
+            grid[x][y]= "\033[31m|TT\033[0m";
+        } else if (type == 0){
+            grid[x][y]= "\033[34m|XX\033[0m";
+        } else {
+            grid[x][y]= "\033[32m|U1\033[0m";
         }
 
     }

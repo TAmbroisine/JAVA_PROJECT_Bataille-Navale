@@ -7,7 +7,7 @@ public class Cuirasse extends Navire
         y = 0;
         orientation = " ";
         taille = 7;
-        boatHp =taille;
+        boatHp = taille;
         pTire=9;
         pattern = "|U";
     }
@@ -18,6 +18,7 @@ public class Cuirasse extends Navire
         this.orientation = orientation;
         this.shipnumb = shipnumb;
         taille = 7;
+        boatHp = taille;
         pTire=9;
         pattern = "|U"+shipnumb;
         if (user) {
