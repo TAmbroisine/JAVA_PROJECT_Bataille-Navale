@@ -247,6 +247,7 @@ public class Game {
                 break;
             case 666:
                 player.navires.nuke();
+                ResetConsole.FullClear();
                 player.navires.PrintGrid(true);
                 break;
         }
