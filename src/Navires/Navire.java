@@ -90,7 +90,6 @@ public class Navire implements Model {
             IncrementCoord();
             return AddMoveToGrid();
         }else {
-            System.out.println("IsDMG1");
             return false;
         }
     }
@@ -101,9 +100,6 @@ public class Navire implements Model {
      */
     private boolean AddMoveToGrid(){
         if (Objects.equals(orientation, "vertical")) {
-            /*//debug
-            System.out.println("y = "+y+"/ y + taille = "+(y+taille)+"/ yMax = "+yMax);
-            System.out.println((y >= 0 & (y+taille) < yMax));*/
             if (y >= 0 & (y+taille) <= yMax){
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
@@ -112,9 +108,6 @@ public class Navire implements Model {
             }
         }
         if (Objects.equals(orientation, "horizontal")) {
-            /*//debug
-            System.out.println("x = "+x+"/ x + taille = "+(x+taille)+"/ xMax = "+xMax);
-            System.out.println((x >= 0 & (x+taille) < xMax));*/
             if (x >= 0 & (x+taille) <= xMax){
                 if (!positionnement(false)){
                     ResetCoord(orientation,direction);
@@ -207,12 +200,6 @@ public class Navire implements Model {
     private boolean CheckSpace(String orientation, int y, int x, int taille){
         if (Objects.equals(orientation, "vertical")) {
             for (int i = y; i < (y + taille); i++) {
-                /*//debug
-                System.out.println("Grid.grid[x]["+i+"] = " + Grid.grid[x][i]);
-                System.out.println("pattern = " + pattern);
-                System.out.println("(!Objects.equals(Grid.grid[x][i], '|__') = "+(!Objects.equals(Grid.grid[x][i], "|__")));
-                System.out.println("(!Objects.equals(Grid.grid[x][i], pattern)) = "+(!Objects.equals(Grid.grid[x][i], pattern)));
-                System.out.println((!Objects.equals(Grid.grid[x][i], "|__") & (!Objects.equals(Grid.grid[x][i], pattern))));*/
                 if (!Objects.equals(Grid.grid[x][i], "|__") & (!Objects.equals(Grid.grid[x][i], pattern))){
                     return false;
                 }
@@ -220,11 +207,6 @@ public class Navire implements Model {
         }
         else if (Objects.equals(orientation, "horizontal")) {
             for (int i = x; i < (x + taille); i++) {
-                /*//debug
-                System.out.println("Grid.grid["+i+"][y] = " + Grid.grid[i][x]);
-                System.out.println("(!Objects.equals(Grid.grid[i][y], '|__') = "+(!Objects.equals(Grid.grid[i][y], "|__")));
-                System.out.println("(!Objects.equals(Grid.grid[i][y], pattern)) = "+(!Objects.equals(Grid.grid[i][y], pattern)));
-                System.out.println((!Objects.equals(Grid.grid[i][y], "|__") & (!Objects.equals(Grid.grid[i][y], pattern))));*/
                 if (!Objects.equals(Grid.grid[i][y], "|__") & (!Objects.equals(Grid.grid[i][y], pattern))){
                     return false;
                 }
@@ -272,7 +254,9 @@ public class Navire implements Model {
         GenerateDestroyer(user);
         GenerateCuirrasse(user);
         GenerateSous_Marin(user);
-        PrintGrid(user);
+        if (user) {
+            PrintGrid(true);
+        }
 
     }
 
@@ -393,24 +377,16 @@ public class Navire implements Model {
     private void IncrementCoord(){
         if (Objects.equals(orientation, "vertical")) {
             if (direction){
-                /*//debug
-                System.out.println("y = "+y+" --> y = "+(y-1));*/
                 y-=1;
             }else {
-                /*//debug
-                System.out.println("y = "+y+" --> y = "+(y+1));*/
                 y+=1;
             }
 
         }
         if (Objects.equals(orientation, "horizontal")) {
             if (direction){
-                /*//debug
-                System.out.println("x = "+x+" --> x = "+(x+1));*/
                 x+=1;
             }else {
-                /*//debug
-                System.out.println("x = "+x+" --> x = "+(x-1));*/
                 x-=1;
             }
         }
@@ -614,34 +590,19 @@ public class Navire implements Model {
      * La méthode clearBoat suprime les navires de la Grid.
      */
     private void clearBoat(){
-        System.out.println("orientation = "+orientation);
-        System.out.println("direction = "+direction);
         if (Objects.equals(orientation, "horizontal")){
             if (direction){
-                /*//debug
-                System.out.println("x = "+x);
-                System.out.println("y = "+y);
-                System.out.println("Grid.grid["+(x-1)+"]["+y+"] = '|__'");*/
                 Grid.grid[x-1][y] = "|__";
             }
             else {
-                /*System.out.println("x = "+x);
-                System.out.println("y = "+y);
-                System.out.println("Grid.grid["+(tempx+taille)+"]["+y+"] = '|__'");*/
                 Grid.grid[x+taille][y] = "|__";
 
             }
         } else {
             if (direction){
-                /*System.out.println("x = "+x);
-                System.out.println("y = "+y);
-                System.out.println("Grid.grid["+x+"]["+(tempy+taille-1)+"] = '|__'");*/
                 Grid.grid[x][tempy+taille-1] = "|__";
             }
             else {
-                /*System.out.println("x = "+x);
-                System.out.println("y = "+y);
-                System.out.println("Grid.grid["+x+"]["+tempy+"] = '|__'");*/
                 Grid.grid[x][tempy] = "|__";
             }
         }
@@ -665,6 +626,32 @@ public class Navire implements Model {
             }
         }
         return false;
+    }
+
+    /**
+     * La méthode nuke permet de terminer la partie
+     */
+
+    public void nuke(){
+        for (int x = 0; x < xMax;x++){
+            for (int y = 0; y < yMax; y++){
+                subNuke(x,y);
+            }
+        }
+    }
+    /**
+     * La méthode subNuke permet de terminer la partie
+     */
+
+    private void subNuke(int x,int y){
+        if (IsBoat(x,y)){
+            //Add impact on boat
+            Grid.AddTireImpactOnMonitor(x,y,1);
+            GridCPU.AddTireImpactOnPlayerGrid(x,y,1);
+        }else {
+            //Add impact in water
+            Grid.AddTireImpactOnMonitor(x,y,0);
+        }
     }
 
     /**

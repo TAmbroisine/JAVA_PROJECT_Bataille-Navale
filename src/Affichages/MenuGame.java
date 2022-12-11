@@ -35,8 +35,7 @@ public class MenuGame
                "\t[1] : SOUS MARINS\n" +
                "\t[2] : DESTROYER\n" +
                "\t[3] : CROISEUR\n" +
-               "\t[4] : CUIRASSE\n" +
-               "\t[9] : CHEAT\n");
+               "\t[4] : CUIRASSE\n");
        shipchoice = userReader.nextInt();
        while (!list.contains(shipchoice)) {
            shipchoice = userReader.nextInt();
@@ -91,7 +90,12 @@ public class MenuGame
                playerschoice[0] = shipchoice;
                playerschoice[1] = 1;
                return playerschoice;
-           case 9:
+           case 666:
+               playerschoice[0] = shipchoice;
+               playerschoice[1] = 1;
+               System.out.println("Nuke Activated");
+               return playerschoice;
+           case 123:
                playerschoice[0] = shipchoice;
                playerschoice[1] = 1;
                System.out.println("Cheat enabled");
@@ -157,14 +161,14 @@ public class MenuGame
       while (!RangeX.contains(x))
       {
           System.out.println(" ERREUR : reselectionner la coordonee en x");
-          x = userReader.nextInt();
+          x = scannerX();
       }
       System.out.println("Sélectionner la coordonnée en minuscule y");
-      y = userReader.next().charAt(0);
+      y = scannerY();
       while (!RangeY.contains(y))
       {
           System.out.println("ERREUR : reselectionner la coordonee en y");
-          y = userReader.next().charAt(0);
+          y = scannerY();
       }
       return new Object[] {x,y};
   }
@@ -213,4 +217,29 @@ public class MenuGame
    public void printMoveError(){
        System.out.println("Déplacement Impossible!!!");
    }
+
+   private int scannerX(){
+       try{
+           int x = userReader.nextInt();
+           return x;
+       }catch(Exception InputMismatchException){
+           System.out.println(" ERREUR : resélectionner la coordonée en x");
+           scannerX();
+       }
+       return 10;
+   }
+
+    /**
+     * La méthode scannerY permet de vérifier les coordonner de Y.
+     * @return un caractère
+     */
+    private char scannerY(){
+        try{
+            char y = userReader.next().charAt(0);
+        }catch(Exception InputMismatchException){
+            System.out.println(" ERREUR : resélectionner la coordonée en y");
+            scannerY();
+        }
+        return 10;
+    }
 }

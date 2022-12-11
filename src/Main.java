@@ -1,4 +1,6 @@
+import Affichages.Defeat;
 import Affichages.Menu;
+import Affichages.Victory;
 
 import java.io.IOException;
 
@@ -14,11 +16,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         Game Game = new Game();
         Menu menu = new Menu();
+        Victory victory = new Victory();
+        Defeat defeat = new Defeat();
         if(menu.print()){
             Game.Starting_GAME(true);
-            Game.IN_GAME(true);
+            if(Game.IN_GAME(true)){
+                victory.print();
+            } else{
+                defeat.print();
+            }
         }
-
-
     }
 }

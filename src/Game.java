@@ -17,7 +17,10 @@ public class Game {
      */
     MenuGame menugame;
 
-    boolean cheat;
+    /**
+     * Création de variable cheat et nuke de type boolean .
+     */
+    boolean cheat,nuke;
 
     /**
      * Création d'un constructeur par default.
@@ -46,9 +49,11 @@ public class Game {
 
     /**
      * La méthode IN_GAME permet de vérifier la vie des navires.
+     *
      * @param ChoixUser utilisateur
+     * @return True si victoire
      */
-    public void IN_GAME(boolean ChoixUser){
+    public boolean IN_GAME(boolean ChoixUser){
         while(ChoixUser){
             // Move or Shoot according to the player's choice
             controllerChoice();
@@ -56,12 +61,12 @@ public class Game {
             player.navires.checkAllboatLife();
             CPU.navires.checkAllboatLife();
             if (win()){
-                ChoixUser = !win();
+                return true;
             }else if(lose()){
-                ChoixUser = !lose();
+                return false;
             }
         }
-
+        return ChoixUser;
     }
 
     /**
@@ -237,8 +242,11 @@ public class Game {
                     Tire(player.navires.cuirasse);
                 }
                 break;
-            case 9:
-                cheat = true;
+            case 123:
+                cheat = !cheat;
+                break;
+            case 666:
+                player.navires.nuke();
                 break;
         }
     }
@@ -296,7 +304,6 @@ public class Game {
     private void subShootOrMoveCPU(Navire bato, Boolean ShotOrMove, int x, int y, boolean direction){
         if(ShotOrMove) // une chance sur deux de tirer
         {
-            System.out.println("Tire en x = "+x+"/ y = "+y);
             bato.CheckImpact(x,y,false);
         }else{
             bato.Deplacement(direction);

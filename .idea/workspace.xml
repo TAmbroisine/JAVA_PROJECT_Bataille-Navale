@@ -6,9 +6,21 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Add CPU and Cheat" />
-    <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan" />
-    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="corrected bug with CheckImpact">
+      <change afterPath="$PROJECT_DIR$/src/Affichages/Defeat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
+    </list>
+    <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan">
+      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
+    </list>
+    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichages/Victory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Victory.java" afterDir="false" />
+    </list>
     <list id="dcbca908-8e29-4a22-972a-f89c749c1a03" name="Changes by yanni" comment="Changes by yanni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +36,44 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Affichages/MenuGame.java">
+      <ranges>
+        <range start1="29" end1="30" start2="29" end2="30" changelist="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" />
+        <range start1="37" end1="39" start2="37" end2="38" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="93" end1="94" start2="92" end2="98" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="155" end1="156" start2="159" end2="161" changelist="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" />
+        <range start1="159" end1="160" start2="164" end2="165" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="162" end1="163" start2="167" end2="168" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="166" end1="167" start2="171" end2="172" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="215" end1="215" start2="220" end2="245" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/Navires/Navire.java">
+      <ranges>
+        <range start1="92" end1="93" start2="92" end2="92" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="103" end1="106" start2="102" end2="102" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="114" end1="117" start2="110" end2="110" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="209" end1="215" start2="202" end2="202" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="222" end1="227" start2="209" end2="209" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="274" end1="275" start2="256" end2="259" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="395" end1="397" start2="379" end2="379" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="399" end1="401" start2="381" end2="381" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="407" end1="409" start2="387" end2="387" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="411" end1="413" start2="389" end2="389" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="548" end1="549" start2="524" end2="525" changelist="d337219d-e21e-449f-85fd-c8c48c0dc6fa" />
+        <range start1="551" end1="552" start2="527" end2="528" changelist="d337219d-e21e-449f-85fd-c8c48c0dc6fa" />
+        <range start1="560" end1="560" start2="536" end2="542" changelist="d337219d-e21e-449f-85fd-c8c48c0dc6fa" />
+        <range start1="616" end1="618" start2="598" end2="598" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="620" end1="624" start2="600" end2="600" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="627" end1="630" start2="603" end2="603" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="635" end1="638" start2="608" end2="608" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="641" end1="644" start2="611" end2="611" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+        <range start1="658" end1="658" start2="625" end2="629" changelist="d337219d-e21e-449f-85fd-c8c48c0dc6fa" />
+        <range start1="668" end1="668" start2="639" end2="665" changelist="c4f6de56-b565-4956-a4d4-d87981aaafd8" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -83,7 +133,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670793789727</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="corrected bug with CheckImpact">
+      <created>1670794140861</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670794140861</updated>
+    </task>
+    <task id="LOCAL-00005" summary="corrected bug with CheckImpact">
+      <created>1670794169368</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1670794169368</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,7 +169,8 @@
     <MESSAGE value="Changes by yanni" />
     <MESSAGE value="Tools to build a functioning CPU" />
     <MESSAGE value="Add CPU and Cheat" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add CPU and Cheat" />
+    <MESSAGE value="corrected bug with CheckImpact" />
+    <option name="LAST_COMMIT_MESSAGE" value="corrected bug with CheckImpact" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
