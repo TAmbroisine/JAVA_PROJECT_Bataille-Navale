@@ -238,6 +238,7 @@ public class MenuGame
     private char scannerY(){
         try{
             char y = userReader.next().charAt(0);
+            return y;
         }catch(Exception InputMismatchException){
             String trash = userReader.next();
             System.out.println(" ERREUR : resélectionner la coordonée en y");
