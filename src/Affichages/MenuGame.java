@@ -35,7 +35,8 @@ public class MenuGame
                "\t[1] : SOUS MARINS\n" +
                "\t[2] : DESTROYER\n" +
                "\t[3] : CROISEUR\n" +
-               "\t[4] : CUIRASSE");
+               "\t[4] : CUIRASSE\n" +
+               "\t[9] : CHEAT\n");
        shipchoice = userReader.nextInt();
        while (!list.contains(shipchoice)) {
            shipchoice = userReader.nextInt();
