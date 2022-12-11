@@ -6,14 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="correct errors">
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-    </list>
-    <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan" />
-    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm">
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Defeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Defeat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Victory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Victory.java" afterDir="false" />
-    </list>
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="correct errors" />
+    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm" />
     <list id="dcbca908-8e29-4a22-972a-f89c749c1a03" name="Changes by yanni" comment="Changes by yanni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +159,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670798728429</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="correct errors">
+      <created>1670799203034</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1670799203034</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Changes by theworm">
+      <created>1670799211137</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670799211137</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

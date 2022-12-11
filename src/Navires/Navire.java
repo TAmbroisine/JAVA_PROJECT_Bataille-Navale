@@ -431,7 +431,7 @@ public class Navire implements Model {
                     break;
                 case 4:
                     for (int i = x - 1; i < x + 2; i++) {
-                        if (i <= xMax & i >= 0) {
+                        if (i < xMax & i >= 0) {
                             if (user) {
                                 subCheckImpact(y, i);
                             } else {
@@ -440,7 +440,7 @@ public class Navire implements Model {
                         }
                     }
                     for (int i = y - 1; i < y + 2; i++) {
-                        if (i != y & i <= yMax & i >= 0) {
+                        if (i != y & i < yMax & i >= 0) {
                             if (user) {
                                 subCheckImpact(i, x);
                             } else {
@@ -452,7 +452,7 @@ public class Navire implements Model {
                 case 9:
                     for (int i = x - 1; i < x + 2; i++) {
                         for (int j = y - 1; j < y + 2; j++) {
-                            if (i <= xMax & j <= yMax & i >= 0 & j >= 0) {
+                            if (i < xMax & j < yMax & i >= 0 & j >= 0) {
                                 if (user) {
                                     subCheckImpact(j, i);
                                 } else {
