@@ -631,7 +631,7 @@ public class Navire implements Model {
         if (Sous_Marin.IsDead & Sous_Marin1.IsDead & Sous_Marin2.IsDead & Sous_Marin3.IsDead){
             if (destroyer.IsDead & destroyer1.IsDead & destroyer2.IsDead){
                 if (croiseur.IsDead & croiseur1.IsDead){
-                    return cuirasse.IsDMG;
+                    return cuirasse.IsDead;
                 }
             }
         }

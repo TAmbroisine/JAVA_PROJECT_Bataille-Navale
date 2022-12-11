@@ -116,7 +116,7 @@ public class Grid {
 
     public void AddTireImpactOnPlayerGrid(int x, int y, int type) {
         if(type == 1){
-            grid[x][y]= "\033[31m|TT\033[0m";
+            grid[x][y]= "\033[31m"+grid[x][y]+"\033[0m";
         } else if (type == 0){
             grid[x][y]= "\033[34m|XX\033[0m";
         } else {

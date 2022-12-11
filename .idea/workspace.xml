@@ -6,11 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Add nuke and try catch" />
-    <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan" />
-    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm">
-      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="Correct try-catch">
+      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
     </list>
+    <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan" />
+    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm" />
     <list id="dcbca908-8e29-4a22-972a-f89c749c1a03" name="Changes by yanni" comment="Changes by yanni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670796489877</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Correct try-catch">
+      <created>1670796981669</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1670796981669</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Changes by theworm">
+      <created>1670796989163</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670796989163</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +158,7 @@
     <MESSAGE value="corrected bug with CheckImpact" />
     <MESSAGE value="Add nuke and try catch" />
     <MESSAGE value="Changes by bavan" />
+    <MESSAGE value="Correct try-catch" />
     <MESSAGE value="Changes by theworm" />
     <option name="LAST_COMMIT_MESSAGE" value="Changes by theworm" />
   </component>

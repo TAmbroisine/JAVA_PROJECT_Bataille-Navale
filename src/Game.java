@@ -247,6 +247,7 @@ public class Game {
                 break;
             case 666:
                 player.navires.nuke();
+                player.navires.PrintGrid(true);
                 break;
         }
     }
