@@ -27,7 +27,7 @@ public class MenuGame
    public int[] SelectBoat() {
 
        int shipchoice, shipnumber;
-       List<Integer> list = Arrays.asList(1, 2, 3, 4, 9);
+       List<Integer> list = Arrays.asList(1, 2, 3, 4, 666, 123);
        int[] playerschoice = new int[2];
        int value = 3;
        boolean check = false;
@@ -157,7 +157,8 @@ public class MenuGame
           n++;
       }
       System.out.println("Sélectionner la coordonnee en x");
-      x = userReader.nextInt();
+      x = scannerX();
+
       while (!RangeX.contains(x))
       {
           System.out.println(" ERREUR : reselectionner la coordonee en x");

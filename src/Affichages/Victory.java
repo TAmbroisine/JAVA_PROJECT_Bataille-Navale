@@ -9,13 +9,12 @@ import java.util.Random;
 public class Victory {
 
     /**
-     * La methode print permet d'afficher Victoire sur le terminal.
+     * La methode print permet d'afficher Victoire sur le terminal et de le faire clignoter.
      * @throws InterruptedException InterruptedException
      */
     public void print () throws InterruptedException {
         ResetConsole.FullClear();
-        System.out.println("VICTOIRE, BRAVO A TOI !");
-        Random random = new Random();
+       // System.out.println("VICTOIRE, BRAVO A TOI !");
         String VictoryScreen = ("VVVVVVVV           VVVVVVVV iiii                               tttt                             iiii                                              \n" +
                                 "V::::::V           V::::::Vi::::i                           ttt:::t                            i::::i                                             \n" +
                                 "V::::::V           V::::::V iiii                            t:::::t                             iiii                                              \n" +
