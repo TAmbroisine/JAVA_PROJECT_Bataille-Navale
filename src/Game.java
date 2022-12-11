@@ -230,5 +230,9 @@ public class Game {
         }
     }
 
+    /**
+     * La méthode GameplayCPU permet de lancer les attaques et le déplacement.
+     */
+
 
 }
