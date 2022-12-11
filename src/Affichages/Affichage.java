@@ -16,10 +16,10 @@ public class Affichage {
     public Affichage(){}
 
     /**
-     * La méthode PrintGeit permet d'afficher la Grid
+     * La méthode PrintGrid permet d'afficher la Grid
      * @param grid La grid général
-     * @param x Les coordonner en X
-     * @param y Les coordonner en Y
+     * @param x coordonnée en X
+     * @param y coordonée en Y
      */
     //View
     public void PrintGrid(String[][] grid, int x,int y) {

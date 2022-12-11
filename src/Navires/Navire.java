@@ -30,7 +30,7 @@ public class Navire implements Model {
     /**
      * Création de variable direction et IsDMG de type boolean.
      */
-    boolean direction, IsDMG;
+    boolean direction, IsDMG, IsDead;
     /**
      * Création de la variable orientation de type chaine de caractaire.
      */
@@ -444,48 +444,49 @@ public class Navire implements Model {
      * @param user Si user= playeur alors on check la Grid de l'ordinateur. Sinon on check celle du joueur
      */
     public void CheckImpact(int x, int y,boolean user) {
-
-        switch (pTire){
-            case 1:
-                if (user) {
-                    subCheckImpact(y, x);
-                }else{
-                    subCheckImpactCPU(y,x);
-                }
-                break;
-            case 4:
-                for (int i = x-1; i < x+2; i++){
-                    if (i <= xMax) {
-                        if (user) {
-                            subCheckImpact(y, i);
-                        }else{
-                            subCheckImpactCPU(y,i);
-                        }
+        if (!IsDMG) {
+            switch (pTire) {
+                case 1:
+                    if (user) {
+                        subCheckImpact(y, x);
+                    } else {
+                        subCheckImpactCPU(y, x);
                     }
-                }
-                for (int i = y-1; i < y+2; i++){
-                    if (i!=y & i <= yMax){
-                        if (user) {
-                            subCheckImpact(i, x);
-                        }else{
-                            subCheckImpactCPU(i,x);
-                        }
-                    }
-                }
-                break;
-            case 9:
-                for (int i = x-1; i < x+2; i++){
-                    for (int j = y-1; j < y+2; j++){
-                        if (i <= xMax & j <= yMax) {
+                    break;
+                case 4:
+                    for (int i = x - 1; i < x + 2; i++) {
+                        if (i <= xMax & i >= 0) {
                             if (user) {
-                                subCheckImpact(j, i);
-                            }else{
-                                subCheckImpactCPU(j,i);
+                                subCheckImpact(y, i);
+                            } else {
+                                subCheckImpactCPU(y, i);
                             }
                         }
                     }
-                }
-                break;
+                    for (int i = y - 1; i < y + 2; i++) {
+                        if (i != y & i <= yMax & i >= 0) {
+                            if (user) {
+                                subCheckImpact(i, x);
+                            } else {
+                                subCheckImpactCPU(i, x);
+                            }
+                        }
+                    }
+                    break;
+                case 9:
+                    for (int i = x - 1; i < x + 2; i++) {
+                        for (int j = y - 1; j < y + 2; j++) {
+                            if (i <= xMax & j <= yMax) {
+                                if (user) {
+                                    subCheckImpact(j, i);
+                                } else {
+                                    subCheckImpactCPU(j, i);
+                                }
+                            }
+                        }
+                    }
+                    break;
+            }
         }
     }
 
@@ -517,7 +518,7 @@ public class Navire implements Model {
      * @param x Coordonnées en X
      */
     private void subCheckImpactCPU(int y, int x) {
-        if (IsBoat(x,y)){
+        if (IsBoatCPU(x,y)){
             //Add impact on boat
             System.out.println("Impact Confirmed");
             if (Objects.equals(Grid.grid[x][y], "|U1") & !IsCuirasseAlreadyDMG(x,y)){
@@ -558,15 +559,25 @@ public class Navire implements Model {
         return !Objects.equals(GridCPU.grid[x][y], "|__");
     }
 
+    private boolean IsBoatCPU(int x,int y){
+        /*
+        System.out.println("Checking impact");
+        System.out.println("GridCPU["+x+"]["+y+"]= "+GridCPU.grid[x][y]);
+        */
+        return !Objects.equals(Grid.grid[x][y], "|__");
+    }
+
     private boolean IsRocket(int x,int y){
         return Objects.equals(tireB[x][y], "|XX");
     }
 
     /**
      * La méthode checkAllboatLife vérifie la vie des navires.
+     *
+     * @return
      */
 
-    public void checkAllboatLife(){
+    public boolean checkAllboatLife(){
         Sous_Marin.checkBoatLife();
         Sous_Marin1.checkBoatLife();
         Sous_Marin2.checkBoatLife();
@@ -577,6 +588,7 @@ public class Navire implements Model {
         croiseur.checkBoatLife();
         croiseur1.checkBoatLife();
         cuirasse.checkBoatLife();
+        return false;
     }
 
     /**
@@ -589,11 +601,12 @@ public class Navire implements Model {
             for (int y=0; y < yMax;y++){
                 //System.out.println("grid["+x+"]["+y+"] = " + grid[x][y]);
                 if (Objects.equals(grid[x][y], pattern)){
-                    count++;
+                    count ++;
                     //System.out.println("Count = "+count);
                 }
             }
         }
+        IsDead = (count == 0);
         IsDMG =  (count != boatHp);
     }
 
@@ -641,6 +654,17 @@ public class Navire implements Model {
         for (int x = 0; x < bateau.length;x++){
             Arrays.fill(bateau[x], "|__");
         }
+    }
+
+    public boolean IsAllBoatDead(){
+        if (Sous_Marin.IsDead & Sous_Marin1.IsDead & Sous_Marin2.IsDead & Sous_Marin3.IsDead){
+            if (destroyer.IsDead & destroyer1.IsDead & destroyer2.IsDead){
+                if (croiseur.IsDead & croiseur1.IsDead){
+                    return cuirasse.IsDMG;
+                }
+            }
+        }
+        return false;
     }
 
     /**

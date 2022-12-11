@@ -27,7 +27,7 @@ public class MenuGame
    public int[] SelectBoat() {
 
        int shipchoice, shipnumber;
-       List<Integer> list = Arrays.asList(1, 2, 3, 4);
+       List<Integer> list = Arrays.asList(1, 2, 3, 4, 9);
        int[] playerschoice = new int[2];
        int value = 3;
        boolean check = false;
@@ -91,7 +91,11 @@ public class MenuGame
                playerschoice[0] = shipchoice;
                playerschoice[1] = 1;
                return playerschoice;
-
+           case 9:
+               playerschoice[0] = shipchoice;
+               playerschoice[1] = 1;
+               System.out.println("Cheat enabled");
+               return playerschoice;
        }
        return null;
    }

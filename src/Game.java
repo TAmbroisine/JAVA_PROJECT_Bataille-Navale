@@ -1,7 +1,8 @@
 import Affichages.MenuGame;
 import Affichages.ResetConsole;
 import Navires.Navire;
-import Navires.Sous_Marin;
+
+import java.util.Random;
 
 /**
  * Création de la classe Game.
@@ -16,6 +17,8 @@ public class Game {
      */
     MenuGame menugame;
 
+    boolean cheat;
+
     /**
      * Création d'un constructeur par default.
      * Initialisation des variables player, CPU et menugame.
@@ -25,6 +28,7 @@ public class Game {
         player = new Player();
         CPU = new Player();
         menugame = new MenuGame();
+        cheat = false;
     }
 
     /**
@@ -48,10 +52,14 @@ public class Game {
         while(ChoixUser){
             // Move or Shoot according to the player's choice
             controllerChoice();
+            GameplayCPU();
             player.navires.checkAllboatLife();
             CPU.navires.checkAllboatLife();
-
-            //ChoixUser = false;
+            if (win()){
+                ChoixUser = !win();
+            }else if(lose()){
+                ChoixUser = !lose();
+            }
         }
 
     }
@@ -108,7 +116,9 @@ public class Game {
         int y = charToInt(coord[1].toString().charAt(0));
         bato.CheckImpact(x,y,true);
         player.navires.PrintGrid(true);
-        CPU.navires.PrintGrid(false);
+        if (cheat) {
+            CPU.navires.PrintGrid(false);
+        }
     }
     /**
      * La méthode Move permet de lancer les méthodes pour réaliser un déplacement .
@@ -227,6 +237,9 @@ public class Game {
                     Tire(player.navires.cuirasse);
                 }
                 break;
+            case 9:
+                cheat = true;
+                break;
         }
     }
 
@@ -234,5 +247,77 @@ public class Game {
      * La méthode GameplayCPU permet de lancer les attaques et le déplacement.
      */
 
+    private void GameplayCPU(){ //commande de jeu CPU (full aléatoire)
+        Random random = new Random();
+        int x = random.nextInt(16);//génération des coordonées aléatoires de tire
+        int y = random.nextInt(16);
+        int numboat = random.nextInt(4); //génère un nombre en 0 et 3 pour le type du bateau
+        int selectBoat;
+        boolean ShotOrMove = random.nextBoolean();
+        boolean direction = random.nextBoolean();
+
+        switch (numboat) { //Selection du type de bateau
+            case 0 -> {
+                selectBoat = random.nextInt(4); //génère en 0 et 3 pour choisir le sous-marin
+                switch (selectBoat) {
+                    case 0 -> subShootOrMoveCPU(CPU.navires.Sous_Marin, ShotOrMove, x, y, direction);
+                    case 1 -> subShootOrMoveCPU(CPU.navires.Sous_Marin1, ShotOrMove, x, y, direction);
+                    case 2 -> subShootOrMoveCPU(CPU.navires.Sous_Marin2, ShotOrMove, x, y, direction);
+                    case 3 -> subShootOrMoveCPU(CPU.navires.Sous_Marin3, ShotOrMove, x, y, direction);
+                }
+            }
+            case 1 -> {
+                selectBoat = random.nextInt(3); //génère en 0 et 2 pour choisir le destroyer
+                switch (selectBoat) {
+                    case 0 -> subShootOrMoveCPU(CPU.navires.destroyer, ShotOrMove, x, y, direction);
+                    case 1 -> subShootOrMoveCPU(CPU.navires.destroyer1, ShotOrMove, x, y, direction);
+                    case 2 -> subShootOrMoveCPU(CPU.navires.destroyer2, ShotOrMove, x, y, direction);
+                }
+            }
+            case 2 -> {
+                selectBoat = random.nextInt(2); //génère en 0 et 1 pour choisir le croiseur
+                switch (selectBoat) {
+                    case 0 -> subShootOrMoveCPU(CPU.navires.croiseur, ShotOrMove, x, y, direction);
+                    case 1 -> subShootOrMoveCPU(CPU.navires.croiseur1, ShotOrMove, x, y, direction);
+                }
+            }
+            case 3 -> subShootOrMoveCPU(CPU.navires.cuirasse, ShotOrMove, x, y, direction);
+        }
+    }
+
+    /**
+     * La méthode subShootOrMove permet de choisir si on les navires doivent tirer ou se déplacer de l'ordinateur.
+     * @param bato Type navire
+     * @param ShotOrMove Type boolean
+     * @param x Coordonnée en X
+     * @param y Coordonnée en Y
+     * @param direction Type boolean
+     */
+    private void subShootOrMoveCPU(Navire bato, Boolean ShotOrMove, int x, int y, boolean direction){
+        if(ShotOrMove) // une chance sur deux de tirer
+        {
+            System.out.println("Tire en x = "+x+"/ y = "+y);
+            bato.CheckImpact(x,y,false);
+        }else{
+            bato.Deplacement(direction);
+        }
+    }
+
+    /**
+     * La méthode win permet en cas de victoir
+     * @return True si tous les navires de l'ordinateur sont détruis. Sinon false
+     */
+
+    private boolean win(){
+        return CPU.navires.IsAllBoatDead();
+    }
+    /**
+     * La méthode lose permet en cas de victoir
+     * @return True si tous les navires du joueur sont détruis. Sinon false
+     */
+
+    private boolean lose(){
+        return player.navires.IsAllBoatDead();
+    }
 
 }
