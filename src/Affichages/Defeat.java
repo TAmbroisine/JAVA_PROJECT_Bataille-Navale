@@ -28,30 +28,16 @@ public class Defeat {
                 "        \"D::::::::::::DDD       ee:::::::::::::e  f:::::::f           a::::::::::aa:::ai::::::i       tt:::::::::::tt  ee:::::::::::::e  \n" +
                 "        \"DDDDDDDDDDDDD            eeeeeeeeeeeeee  fffffffff            aaaaaaaaaa  aaaaiiiiiiii         ttttttttttt      eeeeeeeeeeeeee  \n");
 
-        for (int i = 0; i < 20; i++) {
-            System.out.println("\\033[31m" + DeafeatScreen);
+        for (int i = 0; i < 60; i++) {
+            System.out.println("\033[31m" + DeafeatScreen+"\033[30m");
             Thread.sleep(250);
             ResetConsole.FullClear();
 
-            System.out.println("\\033[30m" + DeafeatScreen);
+            System.out.println(DeafeatScreen);
             Thread.sleep(250);
             ResetConsole.FullClear();
 
-            System.out.println("\\033[31m" + DeafeatScreen);
-            Thread.sleep(250);
-            ResetConsole.FullClear();
 
-            System.out.println("\\033[30m" + DeafeatScreen);
-            Thread.sleep(250);
-            ResetConsole.FullClear();
-
-            System.out.println("\\033[31m" + DeafeatScreen);
-            Thread.sleep(250);
-            ResetConsole.FullClear();
-
-            System.out.println("\\033[30m" + DeafeatScreen);
-            Thread.sleep(250);
-            ResetConsole.FullClear();
         }
     }
 }
