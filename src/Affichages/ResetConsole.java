@@ -1,7 +1,9 @@
 package Affichages;
 import java.io.IOException;
 
-import java.io.IOException;
+//Méthode modifié du ProcessBuilder :
+//@https://stackoverflow.com/questions/10241217/how-to-clear-console-in-java
+
 
 /**
  * Création de la classe ResetConsole.

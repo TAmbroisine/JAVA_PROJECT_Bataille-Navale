@@ -2,24 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Affichage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Affichage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/MenuGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/MenuGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Affichages/ResetConsole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/ResetConsole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Deepdemort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CPU.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Global/Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Global/Model.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Grid/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Grid/Grid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Croiseur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Croiseur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Cuirasse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Cuirasse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Destroyer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Destroyer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/I_Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/I_Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Sous_Marin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
