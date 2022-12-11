@@ -139,6 +139,9 @@ public class Game {
         }
         ResetConsole.FullClear();
         player.navires.PrintGrid(true);
+        if (cheat) {
+            CPU.navires.PrintGrid(false);
+        }
     }
 
     /**

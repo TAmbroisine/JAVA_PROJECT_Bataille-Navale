@@ -6,15 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="corrected nuke">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Affichages/Victory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Victory.java" afterDir="false" />
+    <list default="true" id="c4f6de56-b565-4956-a4d4-d87981aaafd8" name="Changes" comment="correct errors">
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Navires/Navire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Navires/Navire.java" afterDir="false" />
     </list>
     <list id="d337219d-e21e-449f-85fd-c8c48c0dc6fa" name="Changes by bavan" comment="Changes by bavan" />
-    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm" />
+    <list id="391242d2-bbe3-4052-b3d8-2bdf7c8e2ae9" name="Changes by theworm" comment="Changes by theworm">
+      <change beforePath="$PROJECT_DIR$/src/Affichages/Defeat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Defeat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Affichages/Victory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Affichages/Victory.java" afterDir="false" />
+    </list>
     <list id="dcbca908-8e29-4a22-972a-f89c749c1a03" name="Changes by yanni" comment="Changes by yanni" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670797935208</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="correct errors">
+      <created>1670798720628</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670798720628</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Changes by theworm">
+      <created>1670798728429</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1670798728429</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,10 +190,11 @@
     <MESSAGE value="Add nuke and try catch" />
     <MESSAGE value="Changes by bavan" />
     <MESSAGE value="Correct try-catch" />
-    <MESSAGE value="Changes by theworm" />
     <MESSAGE value="Modified Impact on playergrid" />
     <MESSAGE value="corrected nuke" />
-    <option name="LAST_COMMIT_MESSAGE" value="corrected nuke" />
+    <MESSAGE value="correct errors" />
+    <MESSAGE value="Changes by theworm" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changes by theworm" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
