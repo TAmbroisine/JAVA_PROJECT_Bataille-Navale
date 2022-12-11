@@ -36,27 +36,27 @@ public class Victory {
         for (int i = 0 ;i<20;i++)
         {
             System.out.println("\\033[32m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[34m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[31m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[33m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[36m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[35m"+ VictoryScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
         }
         }

@@ -559,32 +559,35 @@ public class Navire implements Model {
      * @return
      */
 
-    public boolean checkAllboatLife(){
-        Sous_Marin.checkBoatLife();
-        Sous_Marin1.checkBoatLife();
-        Sous_Marin2.checkBoatLife();
-        Sous_Marin3.checkBoatLife();
-        destroyer.checkBoatLife();
-        destroyer1.checkBoatLife();
-        destroyer2.checkBoatLife();
-        croiseur.checkBoatLife();
-        croiseur1.checkBoatLife();
-        cuirasse.checkBoatLife();
+    public boolean checkAllboatLife(boolean user){
+        Sous_Marin.checkBoatLife(user);
+        Sous_Marin1.checkBoatLife(user);
+        Sous_Marin2.checkBoatLife(user);
+        Sous_Marin3.checkBoatLife(user);
+        destroyer.checkBoatLife(user);
+        destroyer1.checkBoatLife(user);
+        destroyer2.checkBoatLife(user);
+        croiseur.checkBoatLife(user);
+        croiseur1.checkBoatLife(user);
+        cuirasse.checkBoatLife(user);
         return false;
     }
 
     /**
      * La méthode checkAllboatLife vérifie la vie des navires.
      */
-    protected void checkBoatLife(){
-        String[][] grid = Grid.getGrid();
+    protected void checkBoatLife(boolean user){
+        String[][] grid;
+        if (user) {
+            grid = Grid.getGrid();
+        } else{
+            grid = GridCPU.getGrid();
+        }
         int count = 0;
         for (int x=0; x < xMax;x++){
             for (int y=0; y < yMax;y++){
-                //System.out.println("grid["+x+"]["+y+"] = " + grid[x][y]);
                 if (Objects.equals(grid[x][y], pattern)){
                     count ++;
-                    //System.out.println("Count = "+count);
                 }
             }
         }

@@ -58,15 +58,15 @@ public class Game {
             // Move or Shoot according to the player's choice
             controllerChoice();
             GameplayCPU();
-            player.navires.checkAllboatLife();
-            CPU.navires.checkAllboatLife();
+            player.navires.checkAllboatLife(true);
+            CPU.navires.checkAllboatLife(false);
             if (win()){
                 return true;
             }else if(lose()){
                 return false;
             }
         }
-        return ChoixUser;
+        return false;
     }
 
     /**

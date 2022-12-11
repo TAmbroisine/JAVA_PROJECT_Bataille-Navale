@@ -80,7 +80,7 @@ public class Menu extends Affichage
                 case 9:
                     check = false;
                     //Pour quitter la partie
-                    System.out.println("cls");//remplaçable
+                    ResetConsole.FullClear();
                     System.out.println("Vous avez quitté la partie");
                     break;
                 default:
