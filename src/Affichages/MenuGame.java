@@ -224,6 +224,7 @@ public class MenuGame
            int x = userReader.nextInt();
            return x;
        }catch(Exception InputMismatchException){
+           String trash = userReader.next();
            System.out.println(" ERREUR : resélectionner la coordonée en x");
            scannerX();
        }
@@ -238,6 +239,7 @@ public class MenuGame
         try{
             char y = userReader.next().charAt(0);
         }catch(Exception InputMismatchException){
+            String trash = userReader.next();
             System.out.println(" ERREUR : resélectionner la coordonée en y");
             scannerY();
         }
