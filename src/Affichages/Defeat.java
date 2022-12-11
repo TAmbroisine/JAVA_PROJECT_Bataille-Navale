@@ -46,11 +46,11 @@ public class Defeat {
             ResetConsole.FullClear();
 
             System.out.println("\\033[31m" + DeafeatScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
 
             System.out.println("\\033[30m" + DeafeatScreen);
-            wait(250);
+            Thread.sleep(250);
             ResetConsole.FullClear();
         }
     }
