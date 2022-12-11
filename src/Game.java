@@ -3,10 +3,23 @@ import Affichages.ResetConsole;
 import Navires.Navire;
 import Navires.Sous_Marin;
 
+/**
+ * Création de la classe Game.
+ */
 public class Game {
+    /**
+     * Création d'un instance d'objet de type Player.
+     */
     Player player,CPU;
+    /**
+     * Création d'un instance d'objet de type MenuGame.
+     */
     MenuGame menugame;
 
+    /**
+     * Création d'un constructeur par default.
+     * Initialisation des variables player, CPU et menugame.
+     */
     Game()  {
         //nouvelle classe starting game pour rendre le constructeur game utilisable dans un chargement de partie
         player = new Player();
@@ -14,6 +27,11 @@ public class Game {
         menugame = new MenuGame();
     }
 
+    /**
+     * La méthode Starting_GAME permet de lancer le jeu en créant les navires.
+     * @param ChoixUser true si joueur
+     * @throws Exception Exception
+     */
     public void Starting_GAME (boolean ChoixUser) throws Exception {
         while (ChoixUser) {
             player.navires.SpawnBoat(true);
@@ -21,6 +39,11 @@ public class Game {
             ChoixUser = false;
         }
     }
+
+    /**
+     * La méthode IN_GAME permet de vérifier la vie des navires.
+     * @param ChoixUser utilisateur
+     */
     public void IN_GAME(boolean ChoixUser){
         while(ChoixUser){
             // Move or Shoot according to the player's choice
@@ -32,6 +55,12 @@ public class Game {
         }
 
     }
+
+    /**
+     * La méthode charToInt permet de convertir un caractère en entier.
+     * @param input Caractère
+     * @return Entier
+     */
 
     private int charToInt(char input){
         int n = 0;
@@ -45,6 +74,9 @@ public class Game {
         return 0;
     }
 
+    /**
+     * La méthode clearConsole permet de supprimer l'historique du console.
+     */
     public static void clearConsole() {
         try {
             final String os = System.getProperty("os.name");
@@ -58,6 +90,11 @@ public class Game {
             //  Handle any exceptions.
         }
     }
+
+    /**
+     * La méthode Tire permet de lancer les méthodes pour réaliser une tire.
+     * @param bato Navire
+     */
 
     private void Tire(Navire bato){
         Object[] coord = menugame.CoordonatesShoots();
@@ -73,6 +110,10 @@ public class Game {
         player.navires.PrintGrid(true);
         CPU.navires.PrintGrid(false);
     }
+    /**
+     * La méthode Move permet de lancer les méthodes pour réaliser un déplacement .
+     * @param bato Navire
+     */
 
     private void Move(Navire bato){
         boolean direction;
@@ -84,6 +125,10 @@ public class Game {
         ResetConsole.FullClear();
         player.navires.PrintGrid(true);
     }
+
+    /**
+     * La méthode controllerChoice permet de lancer les méthodes de choix (menu).
+     */
 
     private void controllerChoice(){
         boolean direction;

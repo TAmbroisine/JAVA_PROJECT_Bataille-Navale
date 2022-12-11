@@ -2,14 +2,28 @@ package Affichages;
 
 import java.util.*;
 
+/**
+ * Création de la classe MenuGame.
+ */
 public class MenuGame
 {
+    /**
+     * Création d'une variable de  type scanner
+     */
     Scanner userReader;
 
+    /**
+     * Constructeur par default.
+     * Initialisation d'un Scanner.
+     */
     public MenuGame(){
         userReader = new Scanner(System.in);
     }
 
+    /**
+     * Methode SelectBoat permet de sélectionner le navire
+     * @return un entier
+     */
    public int[] SelectBoat() {
 
        int shipchoice, shipnumber;
@@ -81,6 +95,11 @@ public class MenuGame
        return null;
    }
 
+    /**
+     * La methode ShootOrMove permet de choisire si on veux tier ou déplacer un navire
+     * @return false si le choix est different de 1 et 2.
+     */
+
    public boolean ShootOrMove(){
        int choice;
         System.out.println("""
@@ -107,6 +126,11 @@ public class MenuGame
         }while (choice !=1 & choice!= 2);
         return  false;
     }
+
+    /**
+     * La méthode CoordonatesShoots permet de récupérer les coordonnées de tire.
+     * @return Les coordonnées
+     */
   public Object[] CoordonatesShoots ()
   {
       int x = 0;
@@ -139,6 +163,12 @@ public class MenuGame
       }
       return new Object[] {x,y};
   }
+
+    /**
+     * La méthode WichDirection permet de déplacer le navire
+     * @param orientation L'orientation du navire.
+     * @return false (a voir)
+     */
    public boolean WichDirection(String orientation){
         int choice;
         List<Integer> list = Arrays.asList(1, 2);
@@ -170,6 +200,10 @@ public class MenuGame
        else if (choice == 2) {return false;}
        return false;
     }
+
+    /**
+     * La méthode printMoveError permet d'afficher un message d'erreur si le déplacement est impossible.
+     */
 
    public void printMoveError(){
        System.out.println("Déplacement Impossible!!!");

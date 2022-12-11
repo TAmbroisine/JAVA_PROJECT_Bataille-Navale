@@ -4,6 +4,10 @@ package Affichages;
 * https://stackoverflow.com/a/47400150
 * */
 
+/**
+ * La classe Affichage permet d'afficher la Grid
+ */
+
 public class Affichage {
 
     /**
@@ -12,9 +16,10 @@ public class Affichage {
     public Affichage(){}
 
     /**
-     * @param grid
-     * @param x
-     * @param y
+     * La méthode PrintGeit permet d'afficher la Grid
+     * @param grid La grid général
+     * @param x Les coordonner en X
+     * @param y Les coordonner en Y
      */
     //View
     public void PrintGrid(String[][] grid, int x,int y) {
@@ -34,7 +39,8 @@ public class Affichage {
     }
 
     /**
-     * @param x
+     * Affichage de l'entête de la Grid
+     * @param x La taille de l'entête
      */
     //View
     public void PrintHeader(int x){
@@ -62,7 +68,8 @@ public class Affichage {
     }
 
     /**
-     * @param x
+     * Methode Nom_Grille permet d'indiquer le Grid joueur et ordinateur.
+     * @param x Cordonner d'affichage
      */
      //View
      public void Nom_Grille(int x){

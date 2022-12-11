@@ -7,22 +7,63 @@ import java.util.Arrays;
 import java.util.Objects;
 import java.util.Random;
 
+/**
+ * Création de la classe Navire qui hérite de Model
+ */
 public class Navire implements Model {
 
     //No need for Deplacement to be abstract because it works the same for Every ship
     //Pas besoin pour Deplacement d'être abstrait car il fonctionne de la même manière pour tout les bateaux
 
+    /**
+     * Récupère la valeur de XMax dans Grid.
+     */
     int xMax = Grid.getX()/2;
+    /**
+     * Récupère la valeur de Ymax dans Grid.
+     */
     int yMax = Grid.getY();
+    /**
+     * Création de variable x,y,tempx,tempy,taille,pTire, boatHp et shipnumb de type entier.
+     */
     int x,y,tempx,tempy,taille,pTire, boatHp,shipnumb;
+    /**
+     * Création de variable direction et IsDMG de type boolean.
+     */
     boolean direction, IsDMG;
+    /**
+     * Création de la variable orientation de type chaine de caractaire.
+     */
     public String orientation;
+    /**
+     * Création de la variable pattern de type chaine de caractaire.
+     */
     String pattern;
+    /**
+     * Création de tableau bateau et tireB de type chaine de caractaire.
+     */
     String[][] bateau,tireB;
+    /**
+     * Création d'un instance d'objet de type Cuirasse.
+     */
     public Cuirasse cuirasse;
+    /**
+     * Création d'un instance d'objet de type Croiseur.
+     */
     public Croiseur croiseur,croiseur1;
+    /**
+     * Création d'un instance d'objet de type Destroyer.
+     */
     public Destroyer destroyer,destroyer1,destroyer2;
+    /**
+     * Création d'un instance d'objet de type Sous_Marin.
+     */
     public Sous_Marin Sous_Marin,Sous_Marin1,Sous_Marin2,Sous_Marin3;
+
+    /**
+     * Constructeur par default.
+     * Initialisation des variable x,y,shipnumb,direction,orientation,pattern,bateau,tireB et IsDMG
+     */
 
     public Navire(){
         x = 0;
@@ -38,7 +79,8 @@ public class Navire implements Model {
 
     /**
      * Move the boat to the given coordonates
-     * @return
+     * @param direction need the direction of the boat
+     * @return false si navire et toucher
      */
     public boolean Deplacement(boolean direction){
         if (!IsDMG) {
@@ -83,8 +125,11 @@ public class Navire implements Model {
         return true;
     }
 
-    //abstract public void Tir (int x, int y);
-
+    /**
+     * Méthode positionnement pour joueur permet de positionner les bateaux selon leur orientation dans la Grid
+     * @param init (Déplacement ??)
+     * @return true si on a effacé les bateaux sinon false
+     */
     public boolean positionnement(boolean init) {
 
         if (CheckSpace(orientation,y,x,taille)) {
@@ -116,6 +161,11 @@ public class Navire implements Model {
         return false;
     }
 
+    /**
+     * Méthode positionnement pour ordinateur permet de positionner les bateaux selon leur orientation dans la Grid
+     * @param init (Déplacement ??)
+     * @return true si on a effacé les bateaux sinon false
+     */
     public boolean positionnementCPU(boolean init) {
         if (CheckSpaceCPU(orientation,y,x,taille)) {
             //bateau[x][y] = "|0" + shipnumb;
@@ -146,6 +196,14 @@ public class Navire implements Model {
         return false;
     }
 
+    /**
+     * La méthode CheckSpace permet de vérifier si un navire et présent sur la Grid du joueur.
+     * @param orientation L'orientation du navire
+     * @param y La coordonnée du navire en Y
+     * @param x La coordonnée du navire en X
+     * @param taille La taille du navire
+     * @return false si pas de navire
+     */
     private boolean CheckSpace(String orientation, int y, int x, int taille){
         if (Objects.equals(orientation, "vertical")) {
             for (int i = y; i < (y + taille); i++) {
@@ -174,6 +232,15 @@ public class Navire implements Model {
         }
         return true;
     }
+
+    /**
+     * La méthode CheckSpaceCPU permet de vérifier si un navire et présent sur la Grid de l'ordinateur.
+     * @param orientation L'orientation du navire
+     * @param y La coordonnée du navire en Y
+     * @param x La coordonnée du navire en X
+     * @param taille La taille du navire
+     * @return false si pas de navire
+     */
     private boolean CheckSpaceCPU(String orientation, int y, int x, int taille){
         if (Objects.equals(orientation, "vertical")) {
             for (int i = y; i < (y + taille); i++) {
@@ -192,6 +259,12 @@ public class Navire implements Model {
         return true;
     }
 
+    /**
+     * La méthode permet de faire apparaître des navires sur la Gird
+     * @param user Si user = joueur alors on faire apparaître des navires sur la Gird du joueur. Sinon celle de l'ordinateur
+     * @throws Exception (y a rien)
+     */
+
     public void SpawnBoat(boolean user) throws Exception {
         // Chaque joueur possède une flotte de 10 navires : 1 cuirassé, 2 croiseurs, 3 destroyers et 4 sous-marins/
 
@@ -203,6 +276,12 @@ public class Navire implements Model {
 
     }
 
+    /**
+     * La méthode RanCoord permet de générer des coordonner au hasard.
+     * @param orientation L'orientation du navire
+     * @param taille La taille du navire
+     * @return Une entier
+     */
     private int[] RandCoord(String orientation, int taille){
         int borneInf= 0;
         int borneSup= Grid.y;
@@ -222,6 +301,11 @@ public class Navire implements Model {
         }
         return nb;
     }
+
+    /**
+     * La méthode RandOrientation permet de générer une orientation au hasard.
+     * @return un String
+     */
     private String RandOrientation(){
         String orientation="";
         int borneInf= 1;
@@ -238,11 +322,20 @@ public class Navire implements Model {
         return orientation;
     }
 
+    /**
+     * La méthode GenerateCuirrasse permet de générer un cuirrasse dans une Grid
+     * @param user Si user = player alors on ajoute un cuirasse dans la Grid joueur. Sinon on le met dans la Gris de l'ordinateur
+     */
     private void GenerateCuirrasse(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,7);
         cuirasse = new Cuirasse(coord[0], coord[1], orientation,user,1);
     }
+
+    /**
+     * La méthode GenerateCroiseur permet de générer un croiseur dans une Grid
+     * @param user Si user = player alors on ajoute un croiseur dans la Grid joueur. Sinon on le met dans la Gris de l'ordinateur
+     */
     private void GenerateCroiseur(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,5);
@@ -252,6 +345,10 @@ public class Navire implements Model {
         croiseur1 = new Croiseur(coord[0], coord[1], orientation,user,2);
     }
 
+    /**
+     * La méthode GenerateDestroyer permet de générer un destroyer dans une Grid
+     * @param user Si user = player alors on ajoute un destroyer dans la Grid joueur. Sinon on le met dans la Gris de l'ordinateur
+     */
     private void GenerateDestroyer(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,3);
@@ -267,6 +364,10 @@ public class Navire implements Model {
 
     }
 
+    /**
+     * La méthode GenerateSous_Marin permet de générer un sous_marin dans une Grid
+     * @param user Si user = player alors on ajoute un sous_marin  dans la Grid joueur. Sinon on le met dans la Gris de l'ordinateur
+     */
     private void GenerateSous_Marin(boolean user){
         String orientation = RandOrientation();
         int[] coord = RandCoord(orientation,1);
@@ -284,6 +385,10 @@ public class Navire implements Model {
         coord = RandCoord(orientation,1);
         Sous_Marin3 = new Sous_Marin(coord[0], coord[1], orientation,user,4);
     }
+
+    /**
+     * La méthode IncrementCoord permet d'incrementer les coordonner
+     */
 
     private void IncrementCoord(){
         if (Objects.equals(orientation, "vertical")) {
@@ -311,6 +416,10 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode ResetCoord permet de reset les coordonner
+     */
+
     private void ResetCoord(String orientation,boolean direction){
         if (Objects.equals(orientation, "vertical")) {
             if (direction){
@@ -328,6 +437,12 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode CheckImpact permet de vérifier si un navire est présent sur la Grid de l'ordinateur ou joueur.
+     * @param x Coordonnées en X
+     * @param y Coordonnées en Y
+     * @param user Si user= playeur alors on check la Grid de l'ordinateur. Sinon on check celle du joueur
+     */
     public void CheckImpact(int x, int y,boolean user) {
 
         switch (pTire){
@@ -374,6 +489,11 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode subCheckImpact permet d'afficher les tires sur la Grid de l'ordinateur
+     * @param y Coordonnées en Y
+     * @param x Coordonnées en X
+     */
     private void subCheckImpact(int y, int x) {
         if (IsBoat(x,y)){
             //Add impact on boat
@@ -390,6 +510,12 @@ public class Navire implements Model {
             Grid.AddTireImpactOnMonitor(x,y,0);
         }
     }
+
+    /**
+     * La méthode subCheckImpact permet d'afficher les tires sur la Grid du joueur
+     * @param y Coordonnées en Y
+     * @param x Coordonnées en X
+     */
     private void subCheckImpactCPU(int y, int x) {
         if (IsBoat(x,y)){
             //Add impact on boat
@@ -407,10 +533,23 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode IsCuirasseAlreadyDMG Vérifie si le cuirasse ne soit pas endommagée
+     * @param x Coordonnées en X
+     * @param y Coordonnées en Y
+     * @return
+     */
+
     private boolean IsCuirasseAlreadyDMG(int x,int y){
         return (Objects.equals(Grid.grid[x + 17][y], "\033[32m|U1\033[0m")|Objects.equals(Grid.grid[x + 17][y], "\033[31m|TT\033[0m"));
     }
 
+    /**
+     * La méthode IsBoat permet ??(a rajouter )
+     * @param x Coordonnées en X
+     * @param y Coordonnées en Y
+     * @return
+     */
     private boolean IsBoat(int x,int y){
         /*
         System.out.println("Checking impact");
@@ -423,6 +562,9 @@ public class Navire implements Model {
         return Objects.equals(tireB[x][y], "|XX");
     }
 
+    /**
+     * La méthode checkAllboatLife vérifie la vie des navires.
+     */
 
     public void checkAllboatLife(){
         Sous_Marin.checkBoatLife();
@@ -436,6 +578,10 @@ public class Navire implements Model {
         croiseur1.checkBoatLife();
         cuirasse.checkBoatLife();
     }
+
+    /**
+     * La méthode checkAllboatLife vérifie la vie des navires.
+     */
     protected void checkBoatLife(){
         String[][] grid = Grid.getGrid();
         int count = 0;
@@ -451,6 +597,9 @@ public class Navire implements Model {
         IsDMG =  (count != boatHp);
     }
 
+    /**
+     * La méthode clearBoat suprime les navires de la Grid.
+     */
     private void clearBoat(){
         System.out.println("orientation = "+orientation);
         System.out.println("direction = "+direction);
@@ -485,12 +634,19 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode clearBoat suprime les navires de la Grid.
+     */
     private void clearBateau(){
         for (int x = 0; x < bateau.length;x++){
             Arrays.fill(bateau[x], "|__");
         }
     }
 
+    /**
+     * La méthode  PrintGrid permet d'afficher la Grid.
+     * @param player Soit player = joueur ou ordinateur
+     */
     public void PrintGrid(boolean  player){
         if (player) {
             Screen.Nom_Grille(Grid.getX());
@@ -503,6 +659,10 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode getOrientation permet de récupérer l'orientation d'un navire
+     * @return String
+     */
     public String getOrientation() {
         return orientation;
     }

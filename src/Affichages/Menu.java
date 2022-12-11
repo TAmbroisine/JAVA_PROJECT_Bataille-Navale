@@ -6,6 +6,10 @@ import Navires.Navire;
 import java.util.Objects;
 import java.util.Scanner;
 // Création du menu
+
+/**
+ * Création de la classe menu qui hérite de la classe Affichage
+ */
 public class Menu extends Affichage
 {
     static Scanner userReader;

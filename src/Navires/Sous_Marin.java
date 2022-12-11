@@ -1,7 +1,13 @@
 package Navires;
 
+/**
+ * La classe sous_marin hérite de navire
+ */
 public class Sous_Marin extends Navire
 {
+    /**
+     * Constructeur par default
+     */
 
     private Sous_Marin(){
         x = 0;
@@ -13,6 +19,14 @@ public class Sous_Marin extends Navire
         pattern = "|S";
     }
 
+    /**
+     * Constructeur
+     * @param x La coordonnée du navire en X
+     * @param y La coordonnée du navire en Y
+     * @param orientation L'orientation du navire en Y
+     * @param user Si user ou ordinateur
+     * @param shipnumb (a changer)
+     */
 
     public Sous_Marin(int x, int y, String orientation,boolean user,int shipnumb){
         this.x = x;
@@ -30,6 +44,11 @@ public class Sous_Marin extends Navire
             super.positionnementCPU(true);
         }
     }
+
+    /**
+     * La La méthode GetNum_Sous_Marin permet de récupérer le numéro du sous-marin.
+     * @return entier
+     */
     public int GetNum_Sous_Marin(){
         return shipnumb;
     }
