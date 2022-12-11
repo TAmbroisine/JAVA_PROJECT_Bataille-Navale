@@ -522,10 +522,10 @@ public class Navire implements Model {
     }
 
     /**
-     * La méthode IsBoat permet ??(a rajouter )
+     * La méthode IsBoat permet de check si un navire et présent dans la Grid de l'ordinateur.
      * @param x Coordonnées en X
      * @param y Coordonnées en Y
-     * @return
+     * @return True si un navire est présent
      */
     private boolean IsBoat(int x,int y){
         /*
@@ -534,6 +534,12 @@ public class Navire implements Model {
         */
         return !Objects.equals(GridCPU.grid[x][y], "|__");
     }
+    /**
+     * La méthode IsBoat permet de check si un navire et présent dans la Grid du joueur.
+     * @param x Coordonnées en X
+     * @param y Coordonnées en Y
+     * @return True si un navire est présent
+     */
 
     private boolean IsBoatCPU(int x,int y){
         /*
@@ -617,6 +623,10 @@ public class Navire implements Model {
         }
     }
 
+    /**
+     * La méthode IsAllBoatDead permet de vérifier si les navires sont détruits.
+     * @return True si tout les navires sont détruits.
+     */
     public boolean IsAllBoatDead(){
         if (Sous_Marin.IsDead & Sous_Marin1.IsDead & Sous_Marin2.IsDead & Sous_Marin3.IsDead){
             if (destroyer.IsDead & destroyer1.IsDead & destroyer2.IsDead){
